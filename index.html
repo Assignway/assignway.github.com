@@ -62,6 +62,104 @@
   <header>
     
       <div class="icon"></div>
+      <a href="/2016/04/10/2016-4-3-4-10一周技术点滴 /">
+  <time datetime="2016-04-10T07:26:36.000Z">
+    2016-04-10
+  </time>
+</a>
+    
+    
+  
+    <h1 class="title"><a href="/2016/04/10/2016-4-3-4-10一周技术点滴 /">2016.4.3-4.10一周技术点滴</a></h1>
+  
+
+  </header>
+  
+  <div class="entry">
+    
+      <h2 id="A_u6807_u7B7E_u6267_u884C_u987A_u5E8F"><a href="#A_u6807_u7B7E_u6267_u884C_u987A_u5E8F" class="headerlink" title="A标签执行顺序"></a>A标签执行顺序</h2><h3 id="a_u6807_u7B7E_u91CC_u9762_uFF0Chref_uFF0Conclick_u4E0Eclick_u4E8B_u4EF6_u54EA_u4E2A_u5148_u6267_u884C_u3002"><a href="#a_u6807_u7B7E_u91CC_u9762_uFF0Chref_uFF0Conclick_u4E0Eclick_u4E8B_u4EF6_u54EA_u4E2A_u5148_u6267_u884C_u3002" class="headerlink" title="a标签里面，href，onclick与click事件哪个先执行。"></a>a标签里面，href，onclick与click事件哪个先执行。</h3><h4 id="u4E0A_u4EE3_u7801"><a href="#u4E0A_u4EE3_u7801" class="headerlink" title="上代码"></a>上代码</h4><p><code>&lt;div&gt;&lt;a href=&quot;www.baidu.com&quot;  onclick=&quot;abc()&quot; class=&quot;but&quot;&gt;1&lt;/a&gt;&lt;/div&gt;
+    function abc(){
+      alert(222);
+    };
+    $(&quot;.but&quot;).click(function(){
+     alert(111);
+    });</code> </p>
+<h3 id="u5148_u6267_u884Conclick_u518D_u6267_u884Cclick_u6700_u540E_u6267_u884Chref"><a href="#u5148_u6267_u884Conclick_u518D_u6267_u884Cclick_u6700_u540E_u6267_u884Chref" class="headerlink" title="先执行onclick再执行click最后执行href."></a>先执行onclick再执行click最后执行href.</h3><h2 id="u524D_u7AEFMVC_u6A21_u5F0F"><a href="#u524D_u7AEFMVC_u6A21_u5F0F" class="headerlink" title="前端MVC模式"></a>前端MVC模式</h2><h3 id="M_3A_u5177_u4F53_u903B_u8F91_u5B9E_u73B0_uFF1BV_3A_u9875_u9762_u663E_u793A_u4E0E_u6837_u5F0F_u5C55_u793A_uFF1BC_3A_u9875_u9762_u8282_u70B9_u7684_u9009_u62E9_uFF0C_u6CE8_u518C_u4E0E_u63A7_u5236_u7B49"><a href="#M_3A_u5177_u4F53_u903B_u8F91_u5B9E_u73B0_uFF1BV_3A_u9875_u9762_u663E_u793A_u4E0E_u6837_u5F0F_u5C55_u793A_uFF1BC_3A_u9875_u9762_u8282_u70B9_u7684_u9009_u62E9_uFF0C_u6CE8_u518C_u4E0E_u63A7_u5236_u7B49" class="headerlink" title="M:具体逻辑实现；V:页面显示与样式展示；C:页面节点的选择，注册与控制等"></a>M:具体逻辑实现；V:页面显示与样式展示；C:页面节点的选择，注册与控制等</h3><h4 id="u4E0A_u4EE3_u7801_uFF08_u4E00_u822C_u975EMVC_u5B9E_u73B0_u65B9_u5F0F_uFF09"><a href="#u4E0A_u4EE3_u7801_uFF08_u4E00_u822C_u975EMVC_u5B9E_u73B0_u65B9_u5F0F_uFF09" class="headerlink" title="上代码（一般非MVC实现方式）"></a>上代码（一般非MVC实现方式）</h4><p><code>&lt;--HTML--&gt;
+    &lt;div id=”test” date=”aaa”&gt;&lt;/div&gt;
+    &lt;--js--&gt;
+    $(“#test”).click(function(){
+    Alert($(this).attr(“date”));
+    });</code> </p>
+<h4 id="u4E0A_u4EE3_u7801_uFF08MVC_u5B9E_u73B0_u65B9_u5F0F_uFF09"><a href="#u4E0A_u4EE3_u7801_uFF08MVC_u5B9E_u73B0_u65B9_u5F0F_uFF09" class="headerlink" title="上代码（MVC实现方式）"></a>上代码（MVC实现方式）</h4><p><code>&lt;--HTML--&gt;
+    &lt;div id=”test” date=”aaa”&gt;&lt;/div&gt;
+&lt;--js--&gt;
+&lt;—control--&gt;
+    function control(even,class,Fun,arr){
+    $(document).on(even,class,function(){
+      Fun(arr);
+    });
+    };
+/*
+@param class,选取的class;
+@param even,要执行的事件;
+@param fun,事件触发的函数;
+@param arr,触发函数的参数;
+*/
+&lt;——model--&gt;
+具体的函数操作，可以放到model模块中执行，在model中，才是真正处理逻辑操作
+    function tipInfo(arr){
+    alert(arr[0]);
+    };
+执行
+    control(&quot;click&quot;,&quot;#test&quot;,tipInfo,[1]);</code> </p>
+<h2 id="u94A9_u5B50_u673A_u5236"><a href="#u94A9_u5B50_u673A_u5236" class="headerlink" title="钩子机制"></a>钩子机制</h2><h3 id="u8BA9_u4EE3_u7801_u7684_u903B_u8F91_u66F4_u52A0_u6E05_u6670_uFF0C_u7701_u53BB_u5927_u91CF_u7684_u6761_u4EF6_u5224_u65AD"><a href="#u8BA9_u4EE3_u7801_u7684_u903B_u8F91_u66F4_u52A0_u6E05_u6670_uFF0C_u7701_u53BB_u5927_u91CF_u7684_u6761_u4EF6_u5224_u65AD" class="headerlink" title="让代码的逻辑更加清晰，省去大量的条件判断"></a>让代码的逻辑更加清晰，省去大量的条件判断</h3><h4 id="u4E0A_u4EE3_u7801-1"><a href="#u4E0A_u4EE3_u7801-1" class="headerlink" title="上代码"></a>上代码</h4><p><code>var objHook={
+  :&quot;10&quot;,
+  xiaodong:&quot;20&quot;
+/*  新增加的钩子在这*/
+};
+function Redate(name,score){
+  return{
+    name:name,
+    score:score
+  }
+};
+var xiaomingDATA=Redate(&quot;xiaoming&quot;,&quot;10&quot;); /*获取一个对象，用变量保存*/
+var xiaodongDATA=Redate(&quot;xiaodong&quot;,&quot;10&quot;);
+var arr=[xiaomingDATA,xiaodongDATA];/*将该对象插进数组*/
+function Hook(){
+  var _arry=new Array();
+    for(var i=0;i&lt;arr.length;i++){
+      var arrdata=arr[i];
+      var objScore=Number(arrdata.score);
+      var objName=arrdata.name;
+      if(objHook[objName]){  //钩子在这，通过遍历得到对象的key值而去对应value值
+           objScore+=Number(objHook[objName]);
+           _arry.push(objScore);
+      };
+    };
+     return _arry;
+};
+//而不用钩子机制的代码为
+if(arrdata.name==”xiaoming”){}
+else if(arrdata.name==”xiaodong”){}</code> </p>
+
+    
+  </div>
+  <footer class="end-sep">
+    
+      
+      
+    
+    <div class="clearfix"></div>
+  </footer>
+</article>
+
+
+  
+    <article class="post">
+  <header>
+    
+      <div class="icon"></div>
       <a href="/2016/04/03/2016-3-28-4-3一周技术点滴/">
   <time datetime="2016-04-03T07:26:36.000Z">
     2016-04-03
