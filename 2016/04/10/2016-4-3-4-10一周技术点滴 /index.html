@@ -24,7 +24,7 @@
 <meta property="og:description" content="A标签执行顺序a标签里面，href，onclick与click事件哪个先执行。上代码&amp;lt;div&amp;gt;&amp;lt;a href=&amp;quot;www.baidu.com&amp;quot;  onclick=&amp;quot;abc()&amp;quot; class=&amp;quot;but&amp;quot;&amp;gt;1&amp;lt;/a&amp;gt;&amp;lt;/div&amp;gt;
     function abc(){
       alert(22">
-<meta property="og:updated_time" content="2016-04-10T04:46:28.375Z">
+<meta property="og:updated_time" content="2016-04-17T04:41:21.209Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="2016.4.3-4.10一周技术点滴">
 <meta name="twitter:description" content="A标签执行顺序a标签里面，href，onclick与click事件哪个先执行。上代码&amp;lt;div&amp;gt;&amp;lt;a href=&amp;quot;www.baidu.com&amp;quot;  onclick=&amp;quot;abc()&amp;quot; class=&amp;quot;but&amp;quot;&amp;gt;1&amp;lt;/a&amp;gt;&amp;lt;/div&amp;gt;
@@ -98,7 +98,7 @@
 <h4 id="u4E0A_u4EE3_u7801_uFF08MVC_u5B9E_u73B0_u65B9_u5F0F_uFF09"><a href="#u4E0A_u4EE3_u7801_uFF08MVC_u5B9E_u73B0_u65B9_u5F0F_uFF09" class="headerlink" title="上代码（MVC实现方式）"></a>上代码（MVC实现方式）</h4><p><code>&lt;--HTML--&gt;
     &lt;div id=”test” date=”aaa”&gt;&lt;/div&gt;
 &lt;--js--&gt;
-&lt;—control--&gt;
+&lt;—control--&gt;
     function control(even,class,Fun,arr){
     $(document).on(even,class,function(){
       Fun(arr);
@@ -118,7 +118,7 @@
 执行
     control(&quot;click&quot;,&quot;#test&quot;,tipInfo,[1]);</code> </p>
 <h2 id="u94A9_u5B50_u673A_u5236"><a href="#u94A9_u5B50_u673A_u5236" class="headerlink" title="钩子机制"></a>钩子机制</h2><h3 id="u8BA9_u4EE3_u7801_u7684_u903B_u8F91_u66F4_u52A0_u6E05_u6670_uFF0C_u7701_u53BB_u5927_u91CF_u7684_u6761_u4EF6_u5224_u65AD"><a href="#u8BA9_u4EE3_u7801_u7684_u903B_u8F91_u66F4_u52A0_u6E05_u6670_uFF0C_u7701_u53BB_u5927_u91CF_u7684_u6761_u4EF6_u5224_u65AD" class="headerlink" title="让代码的逻辑更加清晰，省去大量的条件判断"></a>让代码的逻辑更加清晰，省去大量的条件判断</h3><h4 id="u4E0A_u4EE3_u7801-1"><a href="#u4E0A_u4EE3_u7801-1" class="headerlink" title="上代码"></a>上代码</h4><p><code>var objHook={
-  :&quot;10&quot;,
+  xiaoming:&quot;10&quot;,
   xiaodong:&quot;20&quot;
 /*  新增加的钩子在这*/
 };
@@ -137,7 +137,7 @@ function Hook(){
       var arrdata=arr[i];
       var objScore=Number(arrdata.score);
       var objName=arrdata.name;
-      if(objHook[objName]){  //钩子在这，通过遍历得到对象的key值而去对应value值
+      if(objHook[objName]){  //钩子在这，value值对应value值
            objScore+=Number(objHook[objName]);
            _arry.push(objScore);
       };
