@@ -62,6 +62,48 @@
   <header>
     
       <div class="icon"></div>
+      <a href="/2016/05/01/2016. 4.25-5.1一周技术集锦（关键字：函数作用域）/">
+  <time datetime="2016-05-01T07:26:36.000Z">
+    2016-05-01
+  </time>
+</a>
+    
+    
+  
+    <h1 class="title"><a href="/2016/05/01/2016. 4.25-5.1一周技术集锦（关键字：函数作用域）/">2016. 4.25-5.1一周技术集锦（关键字：函数作用域）</a></h1>
+  
+
+  </header>
+  
+  <div class="entry">
+    
+      <h2 id="u51FD_u6570_u4F5C_u7528_u57DF"><a href="#u51FD_u6570_u4F5C_u7528_u57DF" class="headerlink" title="函数作用域"></a>函数作用域</h2><h4 id="u4E0A_u4EE3_u7801"><a href="#u4E0A_u4EE3_u7801" class="headerlink" title="上代码"></a>上代码</h4><p>`<br>    var obj={};<br>    obj.name=”222”;<br>    console.log(obj);  //输出222<br>    obj.name=”333”;<br>    console.log(obj);//输出333.obj.name的值已被改变</p>
+<pre><code>var a=function(){
+var obj={};
+obj.name=&quot;222&quot;;
+console.log(obj);
+};
+console.log(obj);  //输出333
+a();//函数里输出222.函数里面的obj.name不受外部的改变。
+</code></pre><p>` </p>
+<h2 id="u6742_u60F3"><a href="#u6742_u60F3" class="headerlink" title="杂想"></a>杂想</h2><h3 id="1-_u4E0D_u8981_u5199_u91CD_u590D_u7684_u4EE3_u7801_u3002_u4EFB_u4F55_u91CD_u590D_u7684_u4EE3_u7801_u90FD_u53EF_u4EE5_u5C01_u88C5_u6210_u4E00_u4E2A_u201C_u5DE5_u5177_u201D_2C_u4F46_u4E5F_u8981_u6CE8_u610F_u4F7F_u7528_u516C_u5171_u51FD_u6570_uFF0C_u5BFC_u81F4_u7684_u51B2_u7A81_u95EE_u9898_u3002_u7801_u4EE3_u7801_u4E4B_u524D_uFF0C_u6839_u636E_u4E1A_u52A1_u60F3_u6E05_u695A_u4EE3_u7801_u7684_u67B6_u6784_u3002"><a href="#1-_u4E0D_u8981_u5199_u91CD_u590D_u7684_u4EE3_u7801_u3002_u4EFB_u4F55_u91CD_u590D_u7684_u4EE3_u7801_u90FD_u53EF_u4EE5_u5C01_u88C5_u6210_u4E00_u4E2A_u201C_u5DE5_u5177_u201D_2C_u4F46_u4E5F_u8981_u6CE8_u610F_u4F7F_u7528_u516C_u5171_u51FD_u6570_uFF0C_u5BFC_u81F4_u7684_u51B2_u7A81_u95EE_u9898_u3002_u7801_u4EE3_u7801_u4E4B_u524D_uFF0C_u6839_u636E_u4E1A_u52A1_u60F3_u6E05_u695A_u4EE3_u7801_u7684_u67B6_u6784_u3002" class="headerlink" title="1.不要写重复的代码。任何重复的代码都可以封装成一个“工具”,但也要注意使用公共函数，导致的冲突问题。码代码之前，根据业务想清楚代码的架构。"></a>1.不要写重复的代码。任何重复的代码都可以封装成一个“工具”,但也要注意使用公共函数，导致的冲突问题。码代码之前，根据业务想清楚代码的架构。</h3><h3 id="2-_u4E00_u4E2A_u6210_u719F_u7684_u7801_u519C_uFF0C_u4E0D_u662F_u60F3_u5230_u4EC0_u4E48_u5C31_u5199_u4EC0_u4E48_u3002_u8981_u5148_u5BF9_u4E1A_u52A1_uFF0C_u5BF9_u6D41_u7A0B_u6709_u4E00_u4E2A_u6574_u4F53_u7684_u628A_u63E1_uFF0C_u518D_u8FDB_u884C_u4EE3_u7801_u8BBE_u8BA1_u3002_u4E0D_u7136_u5230_u5904_u90FD_u7559_u5751_uFF0C_u5BB3_u4EBA_u5BB3_u5DF1_u3002"><a href="#2-_u4E00_u4E2A_u6210_u719F_u7684_u7801_u519C_uFF0C_u4E0D_u662F_u60F3_u5230_u4EC0_u4E48_u5C31_u5199_u4EC0_u4E48_u3002_u8981_u5148_u5BF9_u4E1A_u52A1_uFF0C_u5BF9_u6D41_u7A0B_u6709_u4E00_u4E2A_u6574_u4F53_u7684_u628A_u63E1_uFF0C_u518D_u8FDB_u884C_u4EE3_u7801_u8BBE_u8BA1_u3002_u4E0D_u7136_u5230_u5904_u90FD_u7559_u5751_uFF0C_u5BB3_u4EBA_u5BB3_u5DF1_u3002" class="headerlink" title="2.一个成熟的码农，不是想到什么就写什么。要先对业务，对流程有一个整体的把握，再进行代码设计。不然到处都留坑，害人害己。"></a>2.一个成熟的码农，不是想到什么就写什么。要先对业务，对流程有一个整体的把握，再进行代码设计。不然到处都留坑，害人害己。</h3>
+    
+  </div>
+  <footer class="end-sep">
+    
+      
+      
+    
+    <div class="clearfix"></div>
+  </footer>
+</article>
+
+
+  
+    <article class="post">
+  <header>
+    
+      <div class="icon"></div>
       <a href="/2016/04/24/2016. 4.18-4.25一周技术集锦/">
   <time datetime="2016-04-24T07:26:36.000Z">
     2016-04-24
@@ -77,7 +119,7 @@
   
   <div class="entry">
     
-      <h2 id="u65E9_u70B9_u7761_u89C9"><a href="#u65E9_u70B9_u7761_u89C9" class="headerlink" title="早点睡觉"></a>早点睡觉</h2><h4 id="u4E00_u4E2A_u4EBA_u505A_u4E09_u4E2A_u9700_u6C42_u9879_u76EE_u2022_u2022_u2022_u52A0_u4E86_u4E00_u5468_u73ED_uFF0C_u5728_u516C_u53F8_u4F4F_u4E86_u4E00_u5468_u2022_u2022_u2022_u2022_u2022_u2022_u2022_u2022_u2022_u867D_u7136_u5F88_u7D2F_uFF0C_u4F46_u5BF9_u524D_u7AEF_u6280_u672F_u4E86_u89E3_u66F4_u52A0_u6DF1_u5165_uFF0C_u5BF9_u8BA1_u7B97_u673A_u901A_u4FE1_u539F_u7406_u4E86_u89E3_u66F4_u52A0_u660E_u786E_u3002_u6280_u672F_u7684_u4E1C_u897F_u90FD_u6709_u89E3_u51B3_u65B9_u6848_uFF0C_u5173_u952E_u662F_u8981_u4E86_u89E3_u4E1A_u52A1_uFF0C_u6E05_u6670_u601D_u7EF4_uFF0C_u4E00_u6B65_u6B65_u8E0F_u8E0F_u5B9E_u5B9E_uFF0C_u6E05_u6E05_u695A_u695A_u5F97_u53BB_u7801_u5B57_u3002_u5F00_u9614_u6280_u672F_u89C6_u91CE_uFF0C_u60F3_u6E05_u695A_u4E4B_u540E_uFF0C_u9A6C_u4E0A_u6267_u884C_u3002__u53EA_u60F3_u8BF4_u4E00_u53E5_uFF0C_u4E94_u884C_u7F3A_u89C9_u2022_u2022_u2022_u56DE_u6765_u80FD_u591A_u65E9_u7761_u89C9_u5C31_u591A_u65E9_u7761_u89C9_u2022_u2022_u2022_u2022"><a href="#u4E00_u4E2A_u4EBA_u505A_u4E09_u4E2A_u9700_u6C42_u9879_u76EE_u2022_u2022_u2022_u52A0_u4E86_u4E00_u5468_u73ED_uFF0C_u5728_u516C_u53F8_u4F4F_u4E86_u4E00_u5468_u2022_u2022_u2022_u2022_u2022_u2022_u2022_u2022_u2022_u867D_u7136_u5F88_u7D2F_uFF0C_u4F46_u5BF9_u524D_u7AEF_u6280_u672F_u4E86_u89E3_u66F4_u52A0_u6DF1_u5165_uFF0C_u5BF9_u8BA1_u7B97_u673A_u901A_u4FE1_u539F_u7406_u4E86_u89E3_u66F4_u52A0_u660E_u786E_u3002_u6280_u672F_u7684_u4E1C_u897F_u90FD_u6709_u89E3_u51B3_u65B9_u6848_uFF0C_u5173_u952E_u662F_u8981_u4E86_u89E3_u4E1A_u52A1_uFF0C_u6E05_u6670_u601D_u7EF4_uFF0C_u4E00_u6B65_u6B65_u8E0F_u8E0F_u5B9E_u5B9E_uFF0C_u6E05_u6E05_u695A_u695A_u5F97_u53BB_u7801_u5B57_u3002_u5F00_u9614_u6280_u672F_u89C6_u91CE_uFF0C_u60F3_u6E05_u695A_u4E4B_u540E_uFF0C_u9A6C_u4E0A_u6267_u884C_u3002__u53EA_u60F3_u8BF4_u4E00_u53E5_uFF0C_u4E94_u884C_u7F3A_u89C9_u2022_u2022_u2022_u56DE_u6765_u80FD_u591A_u65E9_u7761_u89C9_u5C31_u591A_u65E9_u7761_u89C9_u2022_u2022_u2022_u2022" class="headerlink" title="一个人做三个需求项目•••加了一周班，在公司住了一周•••••••••虽然很累，但对前端技术了解更加深入，对计算机通信原理了解更加明确。技术的东西都有解决方案，关键是要了解业务，清晰思维，一步步踏踏实实，清清楚楚得去码字。开阔技术视野，想清楚之后，马上执行。   只想说一句，五行缺觉•••回来能多早睡觉就多早睡觉••••"></a>一个人做三个需求项目•••加了一周班，在公司住了一周•••••••••虽然很累，但对前端技术了解更加深入，对计算机通信原理了解更加明确。技术的东西都有解决方案，关键是要了解业务，清晰思维，一步步踏踏实实，清清楚楚得去码字。开阔技术视野，想清楚之后，马上执行。   只想说一句，五行缺觉•••回来能多早睡觉就多早睡觉••••</h4>
+      <h2 id="u65E9_u70B9_u7761_u89C9"><a href="#u65E9_u70B9_u7761_u89C9" class="headerlink" title="早点睡觉"></a>早点睡觉</h2><h4 id="u4E00_u4E2A_u4EBA_u505A_u4E09_u4E2A_u9700_u6C42_u9879_u76EE_u2022_u2022_u2022_u52A0_u4E86_u4E00_u5468_u73ED_uFF0C_u5728_u516C_u53F8_u4F4F_u4E86_u4E00_u5468_u2022_u2022_u2022_u867D_u7136_u5F88_u7D2F_uFF0C_u4F46_u5BF9_u524D_u7AEF_u6280_u672F_u4E86_u89E3_u66F4_u52A0_u6DF1_u5165_uFF0C_u5BF9_u8BA1_u7B97_u673A_u901A_u4FE1_u539F_u7406_u4E86_u89E3_u66F4_u52A0_u660E_u786E_u3002_u6280_u672F_u7684_u4E1C_u897F_u90FD_u6709_u89E3_u51B3_u65B9_u6848_uFF0C_u5173_u952E_u662F_u8981_u4E86_u89E3_u4E1A_u52A1_uFF0C_u6E05_u6670_u601D_u7EF4_uFF0C_u4E00_u6B65_u6B65_u8E0F_u8E0F_u5B9E_u5B9E_uFF0C_u6E05_u6E05_u695A_u695A_u5F97_u53BB_u7801_u5B57_u3002_u5E73_u65F6_u5F00_u9614_u6280_u672F_u89C6_u91CE_uFF0C_u60F3_u6E05_u695A_u4E4B_u540E_uFF0C_u9A6C_u4E0A_u6267_u884C_u3002__u53EA_u60F3_u8BF4_u4E00_u53E5_uFF0C_u4E94_u884C_u7F3A_u89C9_u2022_u2022_u2022_u56DE_u6765_u80FD_u591A_u65E9_u7761_u89C9_u5C31_u591A_u65E9_u7761_u89C9_u2022_u2022_u2022_u2022"><a href="#u4E00_u4E2A_u4EBA_u505A_u4E09_u4E2A_u9700_u6C42_u9879_u76EE_u2022_u2022_u2022_u52A0_u4E86_u4E00_u5468_u73ED_uFF0C_u5728_u516C_u53F8_u4F4F_u4E86_u4E00_u5468_u2022_u2022_u2022_u867D_u7136_u5F88_u7D2F_uFF0C_u4F46_u5BF9_u524D_u7AEF_u6280_u672F_u4E86_u89E3_u66F4_u52A0_u6DF1_u5165_uFF0C_u5BF9_u8BA1_u7B97_u673A_u901A_u4FE1_u539F_u7406_u4E86_u89E3_u66F4_u52A0_u660E_u786E_u3002_u6280_u672F_u7684_u4E1C_u897F_u90FD_u6709_u89E3_u51B3_u65B9_u6848_uFF0C_u5173_u952E_u662F_u8981_u4E86_u89E3_u4E1A_u52A1_uFF0C_u6E05_u6670_u601D_u7EF4_uFF0C_u4E00_u6B65_u6B65_u8E0F_u8E0F_u5B9E_u5B9E_uFF0C_u6E05_u6E05_u695A_u695A_u5F97_u53BB_u7801_u5B57_u3002_u5E73_u65F6_u5F00_u9614_u6280_u672F_u89C6_u91CE_uFF0C_u60F3_u6E05_u695A_u4E4B_u540E_uFF0C_u9A6C_u4E0A_u6267_u884C_u3002__u53EA_u60F3_u8BF4_u4E00_u53E5_uFF0C_u4E94_u884C_u7F3A_u89C9_u2022_u2022_u2022_u56DE_u6765_u80FD_u591A_u65E9_u7761_u89C9_u5C31_u591A_u65E9_u7761_u89C9_u2022_u2022_u2022_u2022" class="headerlink" title="一个人做三个需求项目•••加了一周班，在公司住了一周•••虽然很累，但对前端技术了解更加深入，对计算机通信原理了解更加明确。技术的东西都有解决方案，关键是要了解业务，清晰思维，一步步踏踏实实，清清楚楚得去码字。平时开阔技术视野，想清楚之后，马上执行。   只想说一句，五行缺觉•••回来能多早睡觉就多早睡觉••••"></a>一个人做三个需求项目•••加了一周班，在公司住了一周•••虽然很累，但对前端技术了解更加深入，对计算机通信原理了解更加明确。技术的东西都有解决方案，关键是要了解业务，清晰思维，一步步踏踏实实，清清楚楚得去码字。平时开阔技术视野，想清楚之后，马上执行。   只想说一句，五行缺觉•••回来能多早睡觉就多早睡觉••••</h4>
     
   </div>
   <footer class="end-sep">
@@ -579,48 +621,6 @@ else if(arrdata.name==”xiaodong”){}</code> </p>
   <div class="entry">
     
       
-    
-  </div>
-  <footer class="end-sep">
-    
-      
-      
-    
-    <div class="clearfix"></div>
-  </footer>
-</article>
-
-
-  
-    <article class="post">
-  <header>
-    
-      <div class="icon"></div>
-      <a href="/2016/03/01/hello-world/">
-  <time datetime="2016-03-01T09:19:55.599Z">
-    2016-03-01
-  </time>
-</a>
-    
-    
-  
-    <h1 class="title"><a href="/2016/03/01/hello-world/">Hello World</a></h1>
-  
-
-  </header>
-  
-  <div class="entry">
-    
-      <p>Welcome to <a href="http://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="http://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="http://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick_Start"><a href="#Quick_Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create_a_new_post"><a href="#Create_a_new_post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="http://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run_server"><a href="#Run_server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="http://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate_static_files"><a href="#Generate_static_files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="http://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy_to_remote_sites"><a href="#Deploy_to_remote_sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="http://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
-
     
   </div>
   <footer class="end-sep">

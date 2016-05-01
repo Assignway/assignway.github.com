@@ -1,0 +1,144 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  
+  <title>2016. 4.25-5.1一周技术集锦（关键字：函数作用域） | Assignway_Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  
+    <meta name="author" content="assignway">
+  
+  
+    <meta name="description" content="函数作用域上代码`    var obj={};    obj.name=”222”;    console.log(obj);  //输出222    obj.name=”333”;    console.log(obj);//输出333.obj.name的值已被改变
+var a=function(){
+var obj={};
+obj.name=&amp;quot;222&amp;quot;;
+console.">
+  
+  <meta name="description" content="函数作用域上代码`    var obj={};    obj.name=”222”;    console.log(obj);  //输出222    obj.name=”333”;    console.log(obj);//输出333.obj.name的值已被改变
+var a=function(){
+var obj={};
+obj.name=&amp;quot;222&amp;quot;;
+console.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="2016. 4.25-5.1一周技术集锦（关键字：函数作用域）">
+<meta property="og:url" content="http://yoursite.com/2016/05/01/2016. 4.25-5.1一周技术集锦（关键字：函数作用域）/index.html">
+<meta property="og:site_name" content="Assignway_Blog">
+<meta property="og:description" content="函数作用域上代码`    var obj={};    obj.name=”222”;    console.log(obj);  //输出222    obj.name=”333”;    console.log(obj);//输出333.obj.name的值已被改变
+var a=function(){
+var obj={};
+obj.name=&amp;quot;222&amp;quot;;
+console.">
+<meta property="og:updated_time" content="2016-05-01T09:30:12.463Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="2016. 4.25-5.1一周技术集锦（关键字：函数作用域）">
+<meta name="twitter:description" content="函数作用域上代码`    var obj={};    obj.name=”222”;    console.log(obj);  //输出222    obj.name=”333”;    console.log(obj);//输出333.obj.name的值已被改变
+var a=function(){
+var obj={};
+obj.name=&amp;quot;222&amp;quot;;
+console.">
+  
+    <link rel="alternate" href="/atom.xml" title="Assignway_Blog" type="application/atom+xml">
+  
+  
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  
+</head>
+
+<body>
+  <div class="wrapper">
+    <header id="header">
+  <div class="title">
+    <h1><a href="/">Assignway_Blog</a></h1>
+    <p><a href="/"></a></p>
+  </div>
+  <nav class="nav">
+    <ul>
+      
+        <li><a href="/">Home</a></li>
+      
+        <li><a href="/archives">Archives</a></li>
+      
+      
+        <li><a href="/atom.xml">RSS</a></li>
+      
+    </ul>
+    <div class="clearfix"></div>
+  </nav>
+  <div class="clearfix"></div>
+</header>
+    <div class="content"><article class="post">
+  <header>
+    
+      <div class="icon"></div>
+      <a href="/2016/05/01/2016. 4.25-5.1一周技术集锦（关键字：函数作用域）/">
+  <time datetime="2016-05-01T07:26:36.000Z">
+    2016-05-01
+  </time>
+</a>
+    
+    
+  
+    <h1 class="title">2016. 4.25-5.1一周技术集锦（关键字：函数作用域）</h1>
+  
+
+  </header>
+  
+  <div class="entry">
+    
+      <h2 id="u51FD_u6570_u4F5C_u7528_u57DF"><a href="#u51FD_u6570_u4F5C_u7528_u57DF" class="headerlink" title="函数作用域"></a>函数作用域</h2><h4 id="u4E0A_u4EE3_u7801"><a href="#u4E0A_u4EE3_u7801" class="headerlink" title="上代码"></a>上代码</h4><p>`<br>    var obj={};<br>    obj.name=”222”;<br>    console.log(obj);  //输出222<br>    obj.name=”333”;<br>    console.log(obj);//输出333.obj.name的值已被改变</p>
+<pre><code>var a=function(){
+var obj={};
+obj.name=&quot;222&quot;;
+console.log(obj);
+};
+console.log(obj);  //输出333
+a();//函数里输出222.函数里面的obj.name不受外部的改变。
+</code></pre><p>` </p>
+<h2 id="u6742_u60F3"><a href="#u6742_u60F3" class="headerlink" title="杂想"></a>杂想</h2><h3 id="1-_u4E0D_u8981_u5199_u91CD_u590D_u7684_u4EE3_u7801_u3002_u4EFB_u4F55_u91CD_u590D_u7684_u4EE3_u7801_u90FD_u53EF_u4EE5_u5C01_u88C5_u6210_u4E00_u4E2A_u201C_u5DE5_u5177_u201D_2C_u4F46_u4E5F_u8981_u6CE8_u610F_u4F7F_u7528_u516C_u5171_u51FD_u6570_uFF0C_u5BFC_u81F4_u7684_u51B2_u7A81_u95EE_u9898_u3002_u7801_u4EE3_u7801_u4E4B_u524D_uFF0C_u6839_u636E_u4E1A_u52A1_u60F3_u6E05_u695A_u4EE3_u7801_u7684_u67B6_u6784_u3002"><a href="#1-_u4E0D_u8981_u5199_u91CD_u590D_u7684_u4EE3_u7801_u3002_u4EFB_u4F55_u91CD_u590D_u7684_u4EE3_u7801_u90FD_u53EF_u4EE5_u5C01_u88C5_u6210_u4E00_u4E2A_u201C_u5DE5_u5177_u201D_2C_u4F46_u4E5F_u8981_u6CE8_u610F_u4F7F_u7528_u516C_u5171_u51FD_u6570_uFF0C_u5BFC_u81F4_u7684_u51B2_u7A81_u95EE_u9898_u3002_u7801_u4EE3_u7801_u4E4B_u524D_uFF0C_u6839_u636E_u4E1A_u52A1_u60F3_u6E05_u695A_u4EE3_u7801_u7684_u67B6_u6784_u3002" class="headerlink" title="1.不要写重复的代码。任何重复的代码都可以封装成一个“工具”,但也要注意使用公共函数，导致的冲突问题。码代码之前，根据业务想清楚代码的架构。"></a>1.不要写重复的代码。任何重复的代码都可以封装成一个“工具”,但也要注意使用公共函数，导致的冲突问题。码代码之前，根据业务想清楚代码的架构。</h3><h3 id="2-_u4E00_u4E2A_u6210_u719F_u7684_u7801_u519C_uFF0C_u4E0D_u662F_u60F3_u5230_u4EC0_u4E48_u5C31_u5199_u4EC0_u4E48_u3002_u8981_u5148_u5BF9_u4E1A_u52A1_uFF0C_u5BF9_u6D41_u7A0B_u6709_u4E00_u4E2A_u6574_u4F53_u7684_u628A_u63E1_uFF0C_u518D_u8FDB_u884C_u4EE3_u7801_u8BBE_u8BA1_u3002_u4E0D_u7136_u5230_u5904_u90FD_u7559_u5751_uFF0C_u5BB3_u4EBA_u5BB3_u5DF1_u3002"><a href="#2-_u4E00_u4E2A_u6210_u719F_u7684_u7801_u519C_uFF0C_u4E0D_u662F_u60F3_u5230_u4EC0_u4E48_u5C31_u5199_u4EC0_u4E48_u3002_u8981_u5148_u5BF9_u4E1A_u52A1_uFF0C_u5BF9_u6D41_u7A0B_u6709_u4E00_u4E2A_u6574_u4F53_u7684_u628A_u63E1_uFF0C_u518D_u8FDB_u884C_u4EE3_u7801_u8BBE_u8BA1_u3002_u4E0D_u7136_u5230_u5904_u90FD_u7559_u5751_uFF0C_u5BB3_u4EBA_u5BB3_u5DF1_u3002" class="headerlink" title="2.一个成熟的码农，不是想到什么就写什么。要先对业务，对流程有一个整体的把握，再进行代码设计。不然到处都留坑，害人害己。"></a>2.一个成熟的码农，不是想到什么就写什么。要先对业务，对流程有一个整体的把握，再进行代码设计。不然到处都留坑，害人害己。</h3>
+    
+  </div>
+  <footer>
+    
+      
+      
+    
+    <div class="clearfix"></div>
+  </footer>
+</article>
+
+</div>
+  </div>
+  <footer id="footer"><div class="copyright">
+  
+  &copy; 2016 <a href="/">assignway</a>
+  
+</div>
+<div class="theme-copyright">
+  Theme by <a href="https://github.com/orderedlist" target="_blank">orderedlist</a>
+   | 
+  Redesign by <a href="http://heroicyang.com/" target="_blank">Heroic Yang</a>
+</div>
+<div class="clearfix"></div></footer>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script>
+<script src="/js/scale.fix.js"></script>
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+
+
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+  (function($){
+    $('.fancybox').fancybox();
+  })(jQuery);
+</script>
+
+</body>
+</html>
