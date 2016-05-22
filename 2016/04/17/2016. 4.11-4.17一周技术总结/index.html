@@ -1,0 +1,182 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  
+  <title>2016. 4.11-4.17一周技术总结 | Assignway_Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  
+    <meta name="author" content="assignway">
+  
+  
+    <meta name="description" content="Return 的理解上代码$(&amp;quot;#test&amp;quot;).click(function(){
+      a();
+      b();  //b()一样执行
+    });
+    function a(){
+      alert(1);
+      return;  //只是阻止了a()方法
+    };
+    function b(){
+      alert(2);">
+  
+  <meta name="description" content="Return 的理解上代码$(&amp;quot;#test&amp;quot;).click(function(){
+      a();
+      b();  //b()一样执行
+    });
+    function a(){
+      alert(1);
+      return;  //只是阻止了a()方法
+    };
+    function b(){
+      alert(2);">
+<meta property="og:type" content="article">
+<meta property="og:title" content="2016. 4.11-4.17一周技术总结">
+<meta property="og:url" content="http://yoursite.com/2016/04/17/2016. 4.11-4.17一周技术总结/index.html">
+<meta property="og:site_name" content="Assignway_Blog">
+<meta property="og:description" content="Return 的理解上代码$(&amp;quot;#test&amp;quot;).click(function(){
+      a();
+      b();  //b()一样执行
+    });
+    function a(){
+      alert(1);
+      return;  //只是阻止了a()方法
+    };
+    function b(){
+      alert(2);">
+<meta property="og:updated_time" content="2016-04-17T04:46:13.615Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="2016. 4.11-4.17一周技术总结">
+<meta name="twitter:description" content="Return 的理解上代码$(&amp;quot;#test&amp;quot;).click(function(){
+      a();
+      b();  //b()一样执行
+    });
+    function a(){
+      alert(1);
+      return;  //只是阻止了a()方法
+    };
+    function b(){
+      alert(2);">
+  
+    <link rel="alternate" href="/atom.xml" title="Assignway_Blog" type="application/atom+xml">
+  
+  
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  
+</head>
+
+<body>
+  <div class="wrapper">
+    <header id="header">
+  <div class="title">
+    <h1><a href="/">Assignway_Blog</a></h1>
+    <p><a href="/"></a></p>
+  </div>
+  <nav class="nav">
+    <ul>
+      
+        <li><a href="/">Home</a></li>
+      
+        <li><a href="/archives">Archives</a></li>
+      
+      
+        <li><a href="/atom.xml">RSS</a></li>
+      
+    </ul>
+    <div class="clearfix"></div>
+  </nav>
+  <div class="clearfix"></div>
+</header>
+    <div class="content"><article class="post">
+  <header>
+    
+      <div class="icon"></div>
+      <a href="/2016/04/17/2016. 4.11-4.17一周技术总结/">
+  <time datetime="2016-04-17T07:26:36.000Z">
+    2016-04-17
+  </time>
+</a>
+    
+    
+  
+    <h1 class="title">2016. 4.11-4.17一周技术总结</h1>
+  
+
+  </header>
+  
+  <div class="entry">
+    
+      <h2 id="Return__u7684_u7406_u89E3"><a href="#Return__u7684_u7406_u89E3" class="headerlink" title="Return 的理解"></a>Return 的理解</h2><h4 id="u4E0A_u4EE3_u7801"><a href="#u4E0A_u4EE3_u7801" class="headerlink" title="上代码"></a>上代码</h4><p><code>$(&quot;#test&quot;).click(function(){
+      a();
+      b();  //b()一样执行
+    });
+    function a(){
+      alert(1);
+      return;  //只是阻止了a()方法
+    };
+    function b(){
+      alert(2);
+    };
+    //===========
+    $(&quot;#test&quot;).click(function(){
+      test();
+    });
+    function test(){
+      var a=1;
+      var b=2;
+      if(a==1){
+        if(b==2){
+          return;
+        }
+      }
+      console.log(&quot;111&quot;);  //在同一函数内，return阻止了，不会打印111
+    };</code> </p>
+<h2 id="u8FD4_u56DE_u5E03_u5C14_u503C"><a href="#u8FD4_u56DE_u5E03_u5C14_u503C" class="headerlink" title="返回布尔值"></a>返回布尔值</h2><h3 id="var_a_3D1_3D_3D2_3B_//_u8FD4_u56DEfalse_3B"><a href="#var_a_3D1_3D_3D2_3B_//_u8FD4_u56DEfalse_3B" class="headerlink" title="var a=1==2;  //返回false;"></a>var a=1==2;  //返回false;</h3><h2 id="u5173_u4E8Ethis_u7684_u7406_u89E3"><a href="#u5173_u4E8Ethis_u7684_u7406_u89E3" class="headerlink" title="关于this的理解"></a>关于this的理解</h2><p>`<br>function a(){this.b=111};a(); console.log(b); //输出111<br>function a(){this.b=111}; console.log(b);//输出错误</p>
+<p>` </p>
+
+    
+  </div>
+  <footer>
+    
+      
+      
+    
+    <div class="clearfix"></div>
+  </footer>
+</article>
+
+</div>
+  </div>
+  <footer id="footer"><div class="copyright">
+  
+  &copy; 2016 <a href="/">assignway</a>
+  
+</div>
+<div class="theme-copyright">
+  Theme by <a href="https://github.com/orderedlist" target="_blank">orderedlist</a>
+   | 
+  Redesign by <a href="http://heroicyang.com/" target="_blank">Heroic Yang</a>
+</div>
+<div class="clearfix"></div></footer>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script>
+<script src="/js/scale.fix.js"></script>
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+
+
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+  (function($){
+    $('.fancybox').fancybox();
+  })(jQuery);
+</script>
+
+</body>
+</html>

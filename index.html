@@ -1,0 +1,673 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  
+  <title>Assignway_Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  
+    <meta name="author" content="assignway">
+  
+  
+  <meta name="description">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Assignway_Blog">
+<meta property="og:url" content="http://yoursite.com/index.html">
+<meta property="og:site_name" content="Assignway_Blog">
+<meta property="og:description">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Assignway_Blog">
+<meta name="twitter:description">
+  
+    <link rel="alternate" href="/atom.xml" title="Assignway_Blog" type="application/atom+xml">
+  
+  
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  
+</head>
+
+<body>
+  <div class="wrapper">
+    <header id="header">
+  <div class="title">
+    <h1><a href="/">Assignway_Blog</a></h1>
+    <p><a href="/"></a></p>
+  </div>
+  <nav class="nav">
+    <ul>
+      
+        <li><a href="/">Home</a></li>
+      
+        <li><a href="/archives">Archives</a></li>
+      
+      
+        <li><a href="/atom.xml">RSS</a></li>
+      
+    </ul>
+    <div class="clearfix"></div>
+  </nav>
+  <div class="clearfix"></div>
+</header>
+    <div class="content">
+
+
+
+
+  
+    <article class="post">
+  <header>
+    
+      <div class="icon"></div>
+      <a href="/2016/05/22/2016. 5.15-5.22一周技术集锦（关键字：发布订阅模式; 匿名函数）/">
+  <time datetime="2016-05-22T07:26:36.000Z">
+    2016-05-22
+  </time>
+</a>
+    
+    
+  
+    <h1 class="title"><a href="/2016/05/22/2016. 5.15-5.22一周技术集锦（关键字：发布订阅模式; 匿名函数）/">2016. 5.15-5.22一周技术集锦（关键字：发布订阅模式; 匿名函数）</a></h1>
+  
+
+  </header>
+  
+  <div class="entry">
+    
+      <h2 id="jquery_u89C2_u5BDF_u8005_u6A21_u5F0F"><a href="#jquery_u89C2_u5BDF_u8005_u6A21_u5F0F" class="headerlink" title="jquery观察者模式"></a>jquery观察者模式</h2><h4 id="u8BA9on_u65B9_u6CD5_u7ED1_u5B9A_u7684_u81EA_u5B9A_u4E49_u4E8B_u4EF6_u5148_u4E0D_u6267_u884C_uFF0C_u76F4_u5230_u4F7F_u7528trigger_u65B9_u6CD5_u6765_u89E6_u53D1_u4E8B_u4EF6_u3002_u4F7F_u7528jQuery_u7684_u89C2_u5BDF_u8005_u6A21_u5F0F_u7684_u597D_u5904_u662F_uFF1A_u4E00_u6B21_u53D1_u5E03_uFF0C_u591A_u6B21_u8BA2_u9605"><a href="#u8BA9on_u65B9_u6CD5_u7ED1_u5B9A_u7684_u81EA_u5B9A_u4E49_u4E8B_u4EF6_u5148_u4E0D_u6267_u884C_uFF0C_u76F4_u5230_u4F7F_u7528trigger_u65B9_u6CD5_u6765_u89E6_u53D1_u4E8B_u4EF6_u3002_u4F7F_u7528jQuery_u7684_u89C2_u5BDF_u8005_u6A21_u5F0F_u7684_u597D_u5904_u662F_uFF1A_u4E00_u6B21_u53D1_u5E03_uFF0C_u591A_u6B21_u8BA2_u9605" class="headerlink" title="让on方法绑定的自定义事件先不执行，直到使用trigger方法来触发事件。使用jQuery的观察者模式的好处是：一次发布，多次订阅"></a>让on方法绑定的自定义事件先不执行，直到使用trigger方法来触发事件。使用jQuery的观察者模式的好处是：一次发布，多次订阅</h4><h4 id="u4E0A_u4EE3_u7801"><a href="#u4E0A_u4EE3_u7801" class="headerlink" title="上代码"></a>上代码</h4><h4 id="u53D1_u5E03_uFF1A"><a href="#u53D1_u5E03_uFF1A" class="headerlink" title="发布："></a>发布：</h4><p><code>$(“.publish”).trigger(“click”);</code></p>
+<h4 id="u8BA2_u9605_uFF1A"><a href="#u8BA2_u9605_uFF1A" class="headerlink" title="订阅："></a>订阅：</h4><p>` $(“.myclass”).on(“click”,function(){<br>    console.log(111);<br>  });    </p>
+<p>`</p>
+<h2 id="u533F_u540D_u51FD_u6570_u4E24_u79CD_u5199_u6CD5"><a href="#u533F_u540D_u51FD_u6570_u4E24_u79CD_u5199_u6CD5" class="headerlink" title="匿名函数两种写法"></a>匿名函数两种写法</h2><h4 id="u4E0A_u4EE3_u7801-1"><a href="#u4E0A_u4EE3_u7801-1" class="headerlink" title="上代码"></a>上代码</h4><p>`   1.(function(){console.log(111)}());<br>    2.(function(){console.log(111)})();</p>
+<p>`</p>
+
+    
+  </div>
+  <footer class="end-sep">
+    
+      
+      
+    
+    <div class="clearfix"></div>
+  </footer>
+</article>
+
+
+  
+    <article class="post">
+  <header>
+    
+      <div class="icon"></div>
+      <a href="/2016/05/15/2016. 5.7-5.15一周技术集锦(关键字：js函数构造器)/">
+  <time datetime="2016-05-15T07:26:36.000Z">
+    2016-05-15
+  </time>
+</a>
+    
+    
+  
+    <h1 class="title"><a href="/2016/05/15/2016. 5.7-5.15一周技术集锦(关键字：js函数构造器)/">2016.5.8-5.15一周技术集锦（关键字：js函数构造器）</a></h1>
+  
+
+  </header>
+  
+  <div class="entry">
+    
+      <h2 id="u51FD_u6570_u6784_u9020_u5668_u7406_u89E3"><a href="#u51FD_u6570_u6784_u9020_u5668_u7406_u89E3" class="headerlink" title="函数构造器理解"></a>函数构造器理解</h2><h4 id="u4E0A_u4EE3_u7801"><a href="#u4E0A_u4EE3_u7801" class="headerlink" title="上代码"></a>上代码</h4><p>` function test(){<br>    alert(111);<br>};</p>
+<p> var a=new test();<br> a.constructor===test;  //a的构造函数是test<br> test.prototype.constructor===test;//test的原型方法的构造函数是test<br> a.<em>proto</em>===test.prototype;  //a的初始化属性等于其构造函数的原型方法<br>`</p>
+
+    
+  </div>
+  <footer class="end-sep">
+    
+      
+      
+    
+    <div class="clearfix"></div>
+  </footer>
+</article>
+
+
+  
+    <article class="post">
+  <header>
+    
+      <div class="icon"></div>
+      <a href="/2016/05/08/2016. 5.1-5.7一周技术集锦(关键字：input file)/">
+  <time datetime="2016-05-08T07:26:36.000Z">
+    2016-05-08
+  </time>
+</a>
+    
+    
+  
+    <h1 class="title"><a href="/2016/05/08/2016. 5.1-5.7一周技术集锦(关键字：input file)/">2016.5.1-5.7一周技术集锦（关键字：input file属性）</a></h1>
+  
+
+  </header>
+  
+  <div class="entry">
+    
+      <h2 id="input_file_u5C5E_u6027"><a href="#input_file_u5C5E_u6027" class="headerlink" title="input file属性"></a>input file属性</h2><h4 id="u901A_u8FC7input_file_u7684value_u503C_u6765_u5224_u65AD_u5176_u662F_u5426_u4E3A_u7A7A"><a href="#u901A_u8FC7input_file_u7684value_u503C_u6765_u5224_u65AD_u5176_u662F_u5426_u4E3A_u7A7A" class="headerlink" title="通过input file的value值来判断其是否为空"></a>通过input file的value值来判断其是否为空</h4><h4 id="u901A_u8FC7input_file_u4E0A_u4F20_u6587_u4EF6_uFF0C_u82E5_u4E0A_u4F20_u6587_u4EF6_u4E3A_u7A7A_uFF0C_u5219_u540E_u53F0_u5C55_u73B0_u7684_u6D41_u4E3A_u7A7A"><a href="#u901A_u8FC7input_file_u4E0A_u4F20_u6587_u4EF6_uFF0C_u82E5_u4E0A_u4F20_u6587_u4EF6_u4E3A_u7A7A_uFF0C_u5219_u540E_u53F0_u5C55_u73B0_u7684_u6D41_u4E3A_u7A7A" class="headerlink" title="通过input file上传文件，若上传文件为空，则后台展现的流为空"></a>通过input file上传文件，若上传文件为空，则后台展现的流为空</h4><h2 id="u6742_u60F3"><a href="#u6742_u60F3" class="headerlink" title="杂想"></a>杂想</h2><h3 id="u6CA1_u6709_u591A_u96BE_u7684_u6280_u672F_uFF0C_u660E_u786E_u539F_u7406_uFF0C_u6B65_u6B65_u4E3A_u8425_u3002_u4E0D_u8981_u88AB_u8868_u8C61_u5413_u5012_u3002"><a href="#u6CA1_u6709_u591A_u96BE_u7684_u6280_u672F_uFF0C_u660E_u786E_u539F_u7406_uFF0C_u6B65_u6B65_u4E3A_u8425_u3002_u4E0D_u8981_u88AB_u8868_u8C61_u5413_u5012_u3002" class="headerlink" title="没有多难的技术，明确原理，步步为营。不要被表象吓倒。"></a>没有多难的技术，明确原理，步步为营。不要被表象吓倒。</h3>
+    
+  </div>
+  <footer class="end-sep">
+    
+      
+      
+    
+    <div class="clearfix"></div>
+  </footer>
+</article>
+
+
+  
+    <article class="post">
+  <header>
+    
+      <div class="icon"></div>
+      <a href="/2016/05/01/2016. 4.25-5.1一周技术集锦（关键字：函数作用域）/">
+  <time datetime="2016-05-01T07:26:36.000Z">
+    2016-05-01
+  </time>
+</a>
+    
+    
+  
+    <h1 class="title"><a href="/2016/05/01/2016. 4.25-5.1一周技术集锦（关键字：函数作用域）/">2016. 4.25-5.1一周技术集锦（关键字：函数作用域）</a></h1>
+  
+
+  </header>
+  
+  <div class="entry">
+    
+      <h2 id="u51FD_u6570_u4F5C_u7528_u57DF"><a href="#u51FD_u6570_u4F5C_u7528_u57DF" class="headerlink" title="函数作用域"></a>函数作用域</h2><h4 id="u4E0A_u4EE3_u7801"><a href="#u4E0A_u4EE3_u7801" class="headerlink" title="上代码"></a>上代码</h4><p>`<br>    var obj={};<br>    obj.name=”222”;<br>    console.log(obj);  //输出222<br>    obj.name=”333”;<br>    console.log(obj);//输出333.obj.name的值已被改变</p>
+<pre><code>var a=function(){
+var obj={};
+obj.name=&quot;222&quot;;
+console.log(obj);
+};
+console.log(obj);  //输出333
+a();//函数里输出222.函数里面的obj.name不受外部的改变。
+</code></pre><p>` </p>
+<h2 id="u6742_u60F3"><a href="#u6742_u60F3" class="headerlink" title="杂想"></a>杂想</h2><h3 id="1-_u4E0D_u8981_u5199_u91CD_u590D_u7684_u4EE3_u7801_u3002_u4EFB_u4F55_u91CD_u590D_u7684_u4EE3_u7801_u90FD_u53EF_u4EE5_u5C01_u88C5_u6210_u4E00_u4E2A_u201C_u5DE5_u5177_u201D_2C_u4F46_u4E5F_u8981_u6CE8_u610F_u4F7F_u7528_u516C_u5171_u51FD_u6570_uFF0C_u5BFC_u81F4_u7684_u51B2_u7A81_u95EE_u9898_u3002_u7801_u4EE3_u7801_u4E4B_u524D_uFF0C_u6839_u636E_u4E1A_u52A1_u60F3_u6E05_u695A_u4EE3_u7801_u7684_u67B6_u6784_u3002"><a href="#1-_u4E0D_u8981_u5199_u91CD_u590D_u7684_u4EE3_u7801_u3002_u4EFB_u4F55_u91CD_u590D_u7684_u4EE3_u7801_u90FD_u53EF_u4EE5_u5C01_u88C5_u6210_u4E00_u4E2A_u201C_u5DE5_u5177_u201D_2C_u4F46_u4E5F_u8981_u6CE8_u610F_u4F7F_u7528_u516C_u5171_u51FD_u6570_uFF0C_u5BFC_u81F4_u7684_u51B2_u7A81_u95EE_u9898_u3002_u7801_u4EE3_u7801_u4E4B_u524D_uFF0C_u6839_u636E_u4E1A_u52A1_u60F3_u6E05_u695A_u4EE3_u7801_u7684_u67B6_u6784_u3002" class="headerlink" title="1.不要写重复的代码。任何重复的代码都可以封装成一个“工具”,但也要注意使用公共函数，导致的冲突问题。码代码之前，根据业务想清楚代码的架构。"></a>1.不要写重复的代码。任何重复的代码都可以封装成一个“工具”,但也要注意使用公共函数，导致的冲突问题。码代码之前，根据业务想清楚代码的架构。</h3><h3 id="2-_u4E00_u4E2A_u6210_u719F_u7684_u7801_u519C_uFF0C_u4E0D_u662F_u60F3_u5230_u4EC0_u4E48_u5C31_u5199_u4EC0_u4E48_u3002_u8981_u5148_u5BF9_u4E1A_u52A1_uFF0C_u5BF9_u6D41_u7A0B_u6709_u4E00_u4E2A_u6574_u4F53_u7684_u628A_u63E1_uFF0C_u518D_u8FDB_u884C_u4EE3_u7801_u8BBE_u8BA1_u3002_u4E0D_u7136_u5230_u5904_u90FD_u7559_u5751_uFF0C_u5BB3_u4EBA_u5BB3_u5DF1_u3002"><a href="#2-_u4E00_u4E2A_u6210_u719F_u7684_u7801_u519C_uFF0C_u4E0D_u662F_u60F3_u5230_u4EC0_u4E48_u5C31_u5199_u4EC0_u4E48_u3002_u8981_u5148_u5BF9_u4E1A_u52A1_uFF0C_u5BF9_u6D41_u7A0B_u6709_u4E00_u4E2A_u6574_u4F53_u7684_u628A_u63E1_uFF0C_u518D_u8FDB_u884C_u4EE3_u7801_u8BBE_u8BA1_u3002_u4E0D_u7136_u5230_u5904_u90FD_u7559_u5751_uFF0C_u5BB3_u4EBA_u5BB3_u5DF1_u3002" class="headerlink" title="2.一个成熟的码农，不是想到什么就写什么。要先对业务，对流程有一个整体的把握，再进行代码设计。不然到处都留坑，害人害己。"></a>2.一个成熟的码农，不是想到什么就写什么。要先对业务，对流程有一个整体的把握，再进行代码设计。不然到处都留坑，害人害己。</h3>
+    
+  </div>
+  <footer class="end-sep">
+    
+      
+      
+    
+    <div class="clearfix"></div>
+  </footer>
+</article>
+
+
+  
+    <article class="post">
+  <header>
+    
+      <div class="icon"></div>
+      <a href="/2016/04/24/2016. 4.18-4.25一周技术集锦/">
+  <time datetime="2016-04-24T07:26:36.000Z">
+    2016-04-24
+  </time>
+</a>
+    
+    
+  
+    <h1 class="title"><a href="/2016/04/24/2016. 4.18-4.25一周技术集锦/">2016. 4.18-4.25一周技术集锦（关键字：吐槽）</a></h1>
+  
+
+  </header>
+  
+  <div class="entry">
+    
+      <h2 id="u65E9_u70B9_u7761_u89C9"><a href="#u65E9_u70B9_u7761_u89C9" class="headerlink" title="早点睡觉"></a>早点睡觉</h2><h4 id="u4E00_u4E2A_u4EBA_u505A_u4E09_u4E2A_u9700_u6C42_u9879_u76EE_u2022_u2022_u2022_u52A0_u4E86_u4E00_u5468_u73ED_uFF0C_u5728_u516C_u53F8_u4F4F_u4E86_u4E00_u5468_u2022_u2022_u2022_u867D_u7136_u5F88_u7D2F_uFF0C_u4F46_u5BF9_u524D_u7AEF_u6280_u672F_u4E86_u89E3_u66F4_u52A0_u6DF1_u5165_uFF0C_u5BF9_u8BA1_u7B97_u673A_u901A_u4FE1_u539F_u7406_u4E86_u89E3_u66F4_u52A0_u660E_u786E_u3002_u6280_u672F_u7684_u4E1C_u897F_u90FD_u6709_u89E3_u51B3_u65B9_u6848_uFF0C_u5173_u952E_u662F_u8981_u4E86_u89E3_u4E1A_u52A1_uFF0C_u6E05_u6670_u601D_u7EF4_uFF0C_u4E00_u6B65_u6B65_u8E0F_u8E0F_u5B9E_u5B9E_uFF0C_u6E05_u6E05_u695A_u695A_u5F97_u53BB_u7801_u5B57_u3002_u5E73_u65F6_u5F00_u9614_u6280_u672F_u89C6_u91CE_uFF0C_u60F3_u6E05_u695A_u4E4B_u540E_uFF0C_u9A6C_u4E0A_u6267_u884C_u3002__u53EA_u60F3_u8BF4_u4E00_u53E5_uFF0C_u4E94_u884C_u7F3A_u89C9_u2022_u2022_u2022_u56DE_u6765_u80FD_u591A_u65E9_u7761_u89C9_u5C31_u591A_u65E9_u7761_u89C9_u2022_u2022_u2022_u2022"><a href="#u4E00_u4E2A_u4EBA_u505A_u4E09_u4E2A_u9700_u6C42_u9879_u76EE_u2022_u2022_u2022_u52A0_u4E86_u4E00_u5468_u73ED_uFF0C_u5728_u516C_u53F8_u4F4F_u4E86_u4E00_u5468_u2022_u2022_u2022_u867D_u7136_u5F88_u7D2F_uFF0C_u4F46_u5BF9_u524D_u7AEF_u6280_u672F_u4E86_u89E3_u66F4_u52A0_u6DF1_u5165_uFF0C_u5BF9_u8BA1_u7B97_u673A_u901A_u4FE1_u539F_u7406_u4E86_u89E3_u66F4_u52A0_u660E_u786E_u3002_u6280_u672F_u7684_u4E1C_u897F_u90FD_u6709_u89E3_u51B3_u65B9_u6848_uFF0C_u5173_u952E_u662F_u8981_u4E86_u89E3_u4E1A_u52A1_uFF0C_u6E05_u6670_u601D_u7EF4_uFF0C_u4E00_u6B65_u6B65_u8E0F_u8E0F_u5B9E_u5B9E_uFF0C_u6E05_u6E05_u695A_u695A_u5F97_u53BB_u7801_u5B57_u3002_u5E73_u65F6_u5F00_u9614_u6280_u672F_u89C6_u91CE_uFF0C_u60F3_u6E05_u695A_u4E4B_u540E_uFF0C_u9A6C_u4E0A_u6267_u884C_u3002__u53EA_u60F3_u8BF4_u4E00_u53E5_uFF0C_u4E94_u884C_u7F3A_u89C9_u2022_u2022_u2022_u56DE_u6765_u80FD_u591A_u65E9_u7761_u89C9_u5C31_u591A_u65E9_u7761_u89C9_u2022_u2022_u2022_u2022" class="headerlink" title="一个人做三个需求项目•••加了一周班，在公司住了一周•••虽然很累，但对前端技术了解更加深入，对计算机通信原理了解更加明确。技术的东西都有解决方案，关键是要了解业务，清晰思维，一步步踏踏实实，清清楚楚得去码字。平时开阔技术视野，想清楚之后，马上执行。   只想说一句，五行缺觉•••回来能多早睡觉就多早睡觉••••"></a>一个人做三个需求项目•••加了一周班，在公司住了一周•••虽然很累，但对前端技术了解更加深入，对计算机通信原理了解更加明确。技术的东西都有解决方案，关键是要了解业务，清晰思维，一步步踏踏实实，清清楚楚得去码字。平时开阔技术视野，想清楚之后，马上执行。   只想说一句，五行缺觉•••回来能多早睡觉就多早睡觉••••</h4>
+    
+  </div>
+  <footer class="end-sep">
+    
+      
+      
+    
+    <div class="clearfix"></div>
+  </footer>
+</article>
+
+
+  
+    <article class="post">
+  <header>
+    
+      <div class="icon"></div>
+      <a href="/2016/04/17/2016. 4.11-4.17一周技术总结/">
+  <time datetime="2016-04-17T07:26:36.000Z">
+    2016-04-17
+  </time>
+</a>
+    
+    
+  
+    <h1 class="title"><a href="/2016/04/17/2016. 4.11-4.17一周技术总结/">2016. 4.11-4.17一周技术总结</a></h1>
+  
+
+  </header>
+  
+  <div class="entry">
+    
+      <h2 id="Return__u7684_u7406_u89E3"><a href="#Return__u7684_u7406_u89E3" class="headerlink" title="Return 的理解"></a>Return 的理解</h2><h4 id="u4E0A_u4EE3_u7801"><a href="#u4E0A_u4EE3_u7801" class="headerlink" title="上代码"></a>上代码</h4><p><code>$(&quot;#test&quot;).click(function(){
+      a();
+      b();  //b()一样执行
+    });
+    function a(){
+      alert(1);
+      return;  //只是阻止了a()方法
+    };
+    function b(){
+      alert(2);
+    };
+    //===========
+    $(&quot;#test&quot;).click(function(){
+      test();
+    });
+    function test(){
+      var a=1;
+      var b=2;
+      if(a==1){
+        if(b==2){
+          return;
+        }
+      }
+      console.log(&quot;111&quot;);  //在同一函数内，return阻止了，不会打印111
+    };</code> </p>
+<h2 id="u8FD4_u56DE_u5E03_u5C14_u503C"><a href="#u8FD4_u56DE_u5E03_u5C14_u503C" class="headerlink" title="返回布尔值"></a>返回布尔值</h2><h3 id="var_a_3D1_3D_3D2_3B_//_u8FD4_u56DEfalse_3B"><a href="#var_a_3D1_3D_3D2_3B_//_u8FD4_u56DEfalse_3B" class="headerlink" title="var a=1==2;  //返回false;"></a>var a=1==2;  //返回false;</h3><h2 id="u5173_u4E8Ethis_u7684_u7406_u89E3"><a href="#u5173_u4E8Ethis_u7684_u7406_u89E3" class="headerlink" title="关于this的理解"></a>关于this的理解</h2><p>`<br>function a(){this.b=111};a(); console.log(b); //输出111<br>function a(){this.b=111}; console.log(b);//输出错误</p>
+<p>` </p>
+
+    
+  </div>
+  <footer class="end-sep">
+    
+      
+      
+    
+    <div class="clearfix"></div>
+  </footer>
+</article>
+
+
+  
+    <article class="post">
+  <header>
+    
+      <div class="icon"></div>
+      <a href="/2016/04/10/2016-4-3-4-10一周技术点滴 /">
+  <time datetime="2016-04-10T07:26:36.000Z">
+    2016-04-10
+  </time>
+</a>
+    
+    
+  
+    <h1 class="title"><a href="/2016/04/10/2016-4-3-4-10一周技术点滴 /">2016.4.3-4.10一周技术点滴</a></h1>
+  
+
+  </header>
+  
+  <div class="entry">
+    
+      <h2 id="A_u6807_u7B7E_u6267_u884C_u987A_u5E8F"><a href="#A_u6807_u7B7E_u6267_u884C_u987A_u5E8F" class="headerlink" title="A标签执行顺序"></a>A标签执行顺序</h2><h3 id="a_u6807_u7B7E_u91CC_u9762_uFF0Chref_uFF0Conclick_u4E0Eclick_u4E8B_u4EF6_u54EA_u4E2A_u5148_u6267_u884C_u3002"><a href="#a_u6807_u7B7E_u91CC_u9762_uFF0Chref_uFF0Conclick_u4E0Eclick_u4E8B_u4EF6_u54EA_u4E2A_u5148_u6267_u884C_u3002" class="headerlink" title="a标签里面，href，onclick与click事件哪个先执行。"></a>a标签里面，href，onclick与click事件哪个先执行。</h3><h4 id="u4E0A_u4EE3_u7801"><a href="#u4E0A_u4EE3_u7801" class="headerlink" title="上代码"></a>上代码</h4><p><code>&lt;div&gt;&lt;a href=&quot;www.baidu.com&quot;  onclick=&quot;abc()&quot; class=&quot;but&quot;&gt;1&lt;/a&gt;&lt;/div&gt;
+    function abc(){
+      alert(222);
+    };
+    $(&quot;.but&quot;).click(function(){
+     alert(111);
+    });</code> </p>
+<h3 id="u5148_u6267_u884Conclick_u518D_u6267_u884Cclick_u6700_u540E_u6267_u884Chref"><a href="#u5148_u6267_u884Conclick_u518D_u6267_u884Cclick_u6700_u540E_u6267_u884Chref" class="headerlink" title="先执行onclick再执行click最后执行href."></a>先执行onclick再执行click最后执行href.</h3><h2 id="u524D_u7AEFMVC_u6A21_u5F0F"><a href="#u524D_u7AEFMVC_u6A21_u5F0F" class="headerlink" title="前端MVC模式"></a>前端MVC模式</h2><h3 id="M_3A_u5177_u4F53_u903B_u8F91_u5B9E_u73B0_uFF1BV_3A_u9875_u9762_u663E_u793A_u4E0E_u6837_u5F0F_u5C55_u793A_uFF1BC_3A_u9875_u9762_u8282_u70B9_u7684_u9009_u62E9_uFF0C_u6CE8_u518C_u4E0E_u63A7_u5236_u7B49"><a href="#M_3A_u5177_u4F53_u903B_u8F91_u5B9E_u73B0_uFF1BV_3A_u9875_u9762_u663E_u793A_u4E0E_u6837_u5F0F_u5C55_u793A_uFF1BC_3A_u9875_u9762_u8282_u70B9_u7684_u9009_u62E9_uFF0C_u6CE8_u518C_u4E0E_u63A7_u5236_u7B49" class="headerlink" title="M:具体逻辑实现；V:页面显示与样式展示；C:页面节点的选择，注册与控制等"></a>M:具体逻辑实现；V:页面显示与样式展示；C:页面节点的选择，注册与控制等</h3><h4 id="u4E0A_u4EE3_u7801_uFF08_u4E00_u822C_u975EMVC_u5B9E_u73B0_u65B9_u5F0F_uFF09"><a href="#u4E0A_u4EE3_u7801_uFF08_u4E00_u822C_u975EMVC_u5B9E_u73B0_u65B9_u5F0F_uFF09" class="headerlink" title="上代码（一般非MVC实现方式）"></a>上代码（一般非MVC实现方式）</h4><p><code>&lt;--HTML--&gt;
+    &lt;div id=”test” date=”aaa”&gt;&lt;/div&gt;
+    &lt;--js--&gt;
+    $(“#test”).click(function(){
+    Alert($(this).attr(“date”));
+    });</code> </p>
+<h4 id="u4E0A_u4EE3_u7801_uFF08MVC_u5B9E_u73B0_u65B9_u5F0F_uFF09"><a href="#u4E0A_u4EE3_u7801_uFF08MVC_u5B9E_u73B0_u65B9_u5F0F_uFF09" class="headerlink" title="上代码（MVC实现方式）"></a>上代码（MVC实现方式）</h4><p><code>&lt;--HTML--&gt;
+    &lt;div id=”test” date=”aaa”&gt;&lt;/div&gt;
+&lt;--js--&gt;
+&lt;—control--&gt;
+    function control(even,class,Fun,arr){
+    $(document).on(even,class,function(){
+      Fun(arr);
+    });
+    };
+/*
+@param class,选取的class;
+@param even,要执行的事件;
+@param fun,事件触发的函数;
+@param arr,触发函数的参数;
+*/
+&lt;——model--&gt;
+具体的函数操作，可以放到model模块中执行，在model中，才是真正处理逻辑操作
+    function tipInfo(arr){
+    alert(arr[0]);
+    };
+执行
+    control(&quot;click&quot;,&quot;#test&quot;,tipInfo,[1]);</code> </p>
+<h2 id="u94A9_u5B50_u673A_u5236"><a href="#u94A9_u5B50_u673A_u5236" class="headerlink" title="钩子机制"></a>钩子机制</h2><h3 id="u8BA9_u4EE3_u7801_u7684_u903B_u8F91_u66F4_u52A0_u6E05_u6670_uFF0C_u7701_u53BB_u5927_u91CF_u7684_u6761_u4EF6_u5224_u65AD"><a href="#u8BA9_u4EE3_u7801_u7684_u903B_u8F91_u66F4_u52A0_u6E05_u6670_uFF0C_u7701_u53BB_u5927_u91CF_u7684_u6761_u4EF6_u5224_u65AD" class="headerlink" title="让代码的逻辑更加清晰，省去大量的条件判断"></a>让代码的逻辑更加清晰，省去大量的条件判断</h3><h4 id="u4E0A_u4EE3_u7801-1"><a href="#u4E0A_u4EE3_u7801-1" class="headerlink" title="上代码"></a>上代码</h4><p><code>var objHook={
+  xiaoming:&quot;10&quot;,
+  xiaodong:&quot;20&quot;
+/*  新增加的钩子在这*/
+};
+function Redate(name,score){
+  return{
+    name:name,
+    score:score
+  }
+};
+var xiaomingDATA=Redate(&quot;xiaoming&quot;,&quot;10&quot;); /*获取一个对象，用变量保存*/
+var xiaodongDATA=Redate(&quot;xiaodong&quot;,&quot;10&quot;);
+var arr=[xiaomingDATA,xiaodongDATA];/*将该对象插进数组*/
+function Hook(){
+  var _arry=new Array();
+    for(var i=0;i&lt;arr.length;i++){
+      var arrdata=arr[i];
+      var objScore=Number(arrdata.score);
+      var objName=arrdata.name;
+      if(objHook[objName]){  //钩子在这，value值对应value值
+           objScore+=Number(objHook[objName]);
+           _arry.push(objScore);
+      };
+    };
+     return _arry;
+};
+//而不用钩子机制的代码为
+if(arrdata.name==”xiaoming”){}
+else if(arrdata.name==”xiaodong”){}</code> </p>
+
+    
+  </div>
+  <footer class="end-sep">
+    
+      
+      
+    
+    <div class="clearfix"></div>
+  </footer>
+</article>
+
+
+  
+    <article class="post">
+  <header>
+    
+      <div class="icon"></div>
+      <a href="/2016/04/03/2016-3-28-4-3一周技术点滴/">
+  <time datetime="2016-04-03T07:26:36.000Z">
+    2016-04-03
+  </time>
+</a>
+    
+    
+  
+    <h1 class="title"><a href="/2016/04/03/2016-3-28-4-3一周技术点滴/">2016.3.28-4.3一周技术点滴</a></h1>
+  
+
+  </header>
+  
+  <div class="entry">
+    
+      <h2 id="indexOf_28_29__u65B9_u6CD5"><a href="#indexOf_28_29__u65B9_u6CD5" class="headerlink" title="indexOf() 方法"></a>indexOf() 方法</h2><h3 id="u53EF_u8FD4_u56DE_u67D0_u4E2A_u6307_u5B9A_u7684_u5B57_u7B26_u4E32_u503C_u5728_u5B57_u7B26_u4E32_u4E2D_u9996_u6B21_u51FA_u73B0_u7684_u4F4D_u7F6E"><a href="#u53EF_u8FD4_u56DE_u67D0_u4E2A_u6307_u5B9A_u7684_u5B57_u7B26_u4E32_u503C_u5728_u5B57_u7B26_u4E32_u4E2D_u9996_u6B21_u51FA_u73B0_u7684_u4F4D_u7F6E" class="headerlink" title="可返回某个指定的字符串值在字符串中首次出现的位置"></a>可返回某个指定的字符串值在字符串中首次出现的位置</h3><h3 id="var_str_3D_u201Dabcdefg_u201D_3B_var_a_3D_u201Da1_u201D_3B_str-indexOf_28a_29_u662F_u5426_u7B49_u4E8E_u201C-1_u201D_u5462_uFF1F"><a href="#var_str_3D_u201Dabcdefg_u201D_3B_var_a_3D_u201Da1_u201D_3B_str-indexOf_28a_29_u662F_u5426_u7B49_u4E8E_u201C-1_u201D_u5462_uFF1F" class="headerlink" title="var str=”abcdefg”; var a=”a1”;   str.indexOf(a)是否等于“-1”呢？"></a>var str=”abcdefg”; var a=”a1”;   str.indexOf(a)是否等于“-1”呢？</h3><h4 id="u4E0A_u4EE3_u7801"><a href="#u4E0A_u4EE3_u7801" class="headerlink" title="上代码"></a>上代码</h4><p><code>!function(){
+              $(&quot;.but&quot;).click(function(){
+                  var str=&quot;abcdefg&quot;;
+                  var a=&quot;a1&quot;;
+                  if(str.indexOf(a)==&quot;-1&quot;){
+                      alert(123);//弹出123
+                  }
+                  else{
+                      alert(321);
+                  }
+                });
+          }();</code> </p>
+<h2 id="u8F6E_u64AD_u56FE_u4E2DsetInterval_u7684_u8FD0_u7528"><a href="#u8F6E_u64AD_u56FE_u4E2DsetInterval_u7684_u8FD0_u7528" class="headerlink" title="轮播图中setInterval的运用"></a>轮播图中setInterval的运用</h2><h1 id="u5FC5_u987B_u7528_u4E00_u4E2A_u53D8_u91CF_u6765_u4FDD_u5B58setInterval_3B"><a href="#u5FC5_u987B_u7528_u4E00_u4E2A_u53D8_u91CF_u6765_u4FDD_u5B58setInterval_3B" class="headerlink" title="必须用一个变量来保存setInterval;"></a>必须用一个变量来保存setInterval;</h1><h4 id="u4E0A_u4EE3_u7801-1"><a href="#u4E0A_u4EE3_u7801-1" class="headerlink" title="上代码"></a>上代码</h4><p>`<br>var a= setInterval(‘$(“span.next”).click()’,3000);<br>     $(“.v_content”).hover(function(){<br>        clearInterval(a);<br>     },<br>     function(){<br>        a=setInterval(‘$(“span.next”).click()’,3000); //正确运行<br>        (– setInterval(‘$(“span.next”).click()’,3000); –) //运行错误<br>     }<br>     );</p>
+<p>` </p>
+
+    
+  </div>
+  <footer class="end-sep">
+    
+      
+      
+    
+    <div class="clearfix"></div>
+  </footer>
+</article>
+
+
+  
+    <article class="post">
+  <header>
+    
+      <div class="icon"></div>
+      <a href="/2016/03/27/2016-3-21-2016-3-27一周技术点滴/">
+  <time datetime="2016-03-27T08:15:51.000Z">
+    2016-03-27
+  </time>
+</a>
+    
+    
+  
+    <h1 class="title"><a href="/2016/03/27/2016-3-21-2016-3-27一周技术点滴/">2016.3.21-3.27一周技术点滴</a></h1>
+  
+
+  </header>
+  
+  <div class="entry">
+    
+      <h4 id="u4E00_u76F4_u4EE5_u4E3A_u8868_u683C_u662F_u8FC7_u65F6_u7684_u5E03_u5C40_u65B9_u5F0F_uFF0C_u4E5F_u56E0_u6B64_u4E00_u76F4_u6CA1_u6709_u592A_u8FC7_u5173_u6CE8_u5B83_u7684_u5B9E_u73B0_u3002_u8FD9_u5468_u9047_u5230_u4E00_u4E2A_u8981_u4FEE_u6539_u7684_u8868_u683C_u5E03_u5C40_uFF0C_u77AC_u95F4_u6CEA_u5954_u4E86_B7_B7_B7"><a href="#u4E00_u76F4_u4EE5_u4E3A_u8868_u683C_u662F_u8FC7_u65F6_u7684_u5E03_u5C40_u65B9_u5F0F_uFF0C_u4E5F_u56E0_u6B64_u4E00_u76F4_u6CA1_u6709_u592A_u8FC7_u5173_u6CE8_u5B83_u7684_u5B9E_u73B0_u3002_u8FD9_u5468_u9047_u5230_u4E00_u4E2A_u8981_u4FEE_u6539_u7684_u8868_u683C_u5E03_u5C40_uFF0C_u77AC_u95F4_u6CEA_u5954_u4E86_B7_B7_B7" class="headerlink" title="一直以为表格是过时的布局方式，也因此一直没有太过关注它的实现。这周遇到一个要修改的表格布局，瞬间泪奔了···"></a>一直以为表格是过时的布局方式，也因此一直没有太过关注它的实现。这周遇到一个要修改的表格布局，瞬间泪奔了···</h4><h2 id="DIV_u5782_u76F4_u5C45_u4E2D_u4E4B_u8868_u683C_u65B9_u5F0F"><a href="#DIV_u5782_u76F4_u5C45_u4E2D_u4E4B_u8868_u683C_u65B9_u5F0F" class="headerlink" title="DIV垂直居中之表格方式"></a>DIV垂直居中之表格方式</h2><h3 id="u65B9_u6CD5_uFF1A_u5C06_u5176_u8F6C_u5316_u4E3A_u8868_u683C_uFF0C_u518D_u5B9A_u4E49_u5782_u76F4_u2013display_3Atable-cell_3Bvertical-align_3Amiddle_3B"><a href="#u65B9_u6CD5_uFF1A_u5C06_u5176_u8F6C_u5316_u4E3A_u8868_u683C_uFF0C_u518D_u5B9A_u4E49_u5782_u76F4_u2013display_3Atable-cell_3Bvertical-align_3Amiddle_3B" class="headerlink" title="方法：将其转化为表格，再定义垂直–display:table-cell;vertical-align:middle;"></a>方法：将其转化为表格，再定义垂直–display:table-cell;vertical-align:middle;</h3><h4 id="u4E0A_u4EE3_u7801"><a href="#u4E0A_u4EE3_u7801" class="headerlink" title="上代码"></a>上代码</h4><p><code>&lt;html&gt;
+    &lt;head&gt;
+    &lt;style&gt;
+    div{
+    width:100px;
+    height:100px;
+    border:1px solid red;
+    display:table-cell;
+    vertical-align:middle;
+    }
+    p{
+    width:20px;
+    height:20px;
+    border:1px solid yellow;
+    }
+    &lt;/style&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+    &lt;div&gt;
+    &lt;p&gt;&lt;/p&gt;
+    &lt;/div&gt;
+    &lt;/body&gt;
+    &lt;/html&gt;</code></p>
+<h2 id="u8868_u683C_u5408_u5E76_u5B9E_u73B0"><a href="#u8868_u683C_u5408_u5E76_u5B9E_u73B0" class="headerlink" title="表格合并实现"></a>表格合并实现</h2><h3 id="u4F7F_u7528_u5C5E_u6027_colspan_u4E0Erowspan"><a href="#u4F7F_u7528_u5C5E_u6027_colspan_u4E0Erowspan" class="headerlink" title="使用属性 colspan与rowspan"></a>使用属性 colspan与rowspan</h3><h4 id="colspan_u5C5E_u6027_u7528_u5728td_u6807_u7B7E_u4E2D_uFF0C_u7528_u6765_u6307_u5B9A_u5355_u5143_u683C_u6A2A_u5411_u8DE8_u8D8A_u7684_u5217_u6570"><a href="#colspan_u5C5E_u6027_u7528_u5728td_u6807_u7B7E_u4E2D_uFF0C_u7528_u6765_u6307_u5B9A_u5355_u5143_u683C_u6A2A_u5411_u8DE8_u8D8A_u7684_u5217_u6570" class="headerlink" title="colspan属性用在td标签中，用来指定单元格横向跨越的列数"></a>colspan属性用在td标签中，用来指定单元格横向跨越的列数</h4><h4 id="rowspan_u7684_u4F5C_u7528_u662F_u6307_u5B9A_u5355_u5143_u683C_u7EB5_u5411_u8DE8_u8D8A_u7684_u884C_u6570"><a href="#rowspan_u7684_u4F5C_u7528_u662F_u6307_u5B9A_u5355_u5143_u683C_u7EB5_u5411_u8DE8_u8D8A_u7684_u884C_u6570" class="headerlink" title="rowspan的作用是指定单元格纵向跨越的行数"></a>rowspan的作用是指定单元格纵向跨越的行数</h4><h3 id="u4F7F_u7528_u8FD9_u4E24_u4E2A_u5C5E_u6027_uFF0C_u8981_u8BB0_u5F97_u5220_u9664_u539F_u672C_u5360_u7528_u4F4D_u7F6E_u7684td"><a href="#u4F7F_u7528_u8FD9_u4E24_u4E2A_u5C5E_u6027_uFF0C_u8981_u8BB0_u5F97_u5220_u9664_u539F_u672C_u5360_u7528_u4F4D_u7F6E_u7684td" class="headerlink" title="使用这两个属性，要记得删除原本占用位置的td"></a>使用这两个属性，要记得删除原本占用位置的td</h3><h4 id="u4E0A_u4EE3_u7801-1"><a href="#u4E0A_u4EE3_u7801-1" class="headerlink" title="上代码"></a>上代码</h4><p><code>&lt;html&gt;
+    &lt;head&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+    &lt;table border= &quot;1 &quot; width= &quot;200 &quot; height=&quot;100&quot;&gt;
+    &lt;tr &gt;
+    &lt;td  colspan=&quot;2&quot;&gt;&lt;/td&gt;  //记得删除原本这里还有的一个td哦
+    &lt;td&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr &gt;
+    &lt;td &gt;&lt;/td&gt;
+    &lt;td&gt;&lt;/td&gt;
+    &lt;td&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;/table&gt;
+    &lt;/body&gt;
+    &lt;/html&gt;</code> </p>
+<h2 id="js_u4E8B_u4EF6_u51B2_u7A81"><a href="#js_u4E8B_u4EF6_u51B2_u7A81" class="headerlink" title="js事件冲突"></a>js事件冲突</h2><h3 id="u51FA_u73B0_u7684_u573A_u666F_uFF1A_u5728_u8868_u5355_u9A8C_u8BC1_u4E2D_uFF0C_u6211_u4EEC_u5F80_u5F80_u4F1A_u5728_u8F93_u5165_u6846_u5931_u53BB_u7126_u70B9_u65F6_u89E6_u53D1_u4E00_u4E2Ablur_u4E8B_u4EF6_uFF0C_u4F46_u5F53_u5931_u53BB_u7126_u70B9_u540E_u70B9_u51FB_u4E86_u4E00_u4E2A_u6309_u94AE_uFF0C_u8FD9_u65F6blur_u4E8B_u4EF6_u548Cclick_u4E8B_u4EF6_u5C31_u90FD_u89E6_u53D1_u4E86_uFF0C_u7531_u4E8Ejs_u662F_u5355_u7EBF_u7A0B_u7684_u6240_u4EE5_u5C31_u51FA_u73B0_u4E86_u95EE_u9898_uFF0C_u73B0_u5728_u9700_u8981_u8BA9blur_u5148_u6267_u884C_u9A8C_u8BC1_uFF0C_u7136_u540E_u5728_u89E6_u53D1click_u4E8B_u4EF6_u3002"><a href="#u51FA_u73B0_u7684_u573A_u666F_uFF1A_u5728_u8868_u5355_u9A8C_u8BC1_u4E2D_uFF0C_u6211_u4EEC_u5F80_u5F80_u4F1A_u5728_u8F93_u5165_u6846_u5931_u53BB_u7126_u70B9_u65F6_u89E6_u53D1_u4E00_u4E2Ablur_u4E8B_u4EF6_uFF0C_u4F46_u5F53_u5931_u53BB_u7126_u70B9_u540E_u70B9_u51FB_u4E86_u4E00_u4E2A_u6309_u94AE_uFF0C_u8FD9_u65F6blur_u4E8B_u4EF6_u548Cclick_u4E8B_u4EF6_u5C31_u90FD_u89E6_u53D1_u4E86_uFF0C_u7531_u4E8Ejs_u662F_u5355_u7EBF_u7A0B_u7684_u6240_u4EE5_u5C31_u51FA_u73B0_u4E86_u95EE_u9898_uFF0C_u73B0_u5728_u9700_u8981_u8BA9blur_u5148_u6267_u884C_u9A8C_u8BC1_uFF0C_u7136_u540E_u5728_u89E6_u53D1click_u4E8B_u4EF6_u3002" class="headerlink" title="出现的场景：在表单验证中，我们往往会在输入框失去焦点时触发一个blur事件，但当失去焦点后点击了一个按钮，这时blur事件和click事件就都触发了，由于js是单线程的所以就出现了问题，现在需要让blur先执行验证，然后在触发click事件。"></a>出现的场景：在表单验证中，我们往往会在输入框失去焦点时触发一个blur事件，但当失去焦点后点击了一个按钮，这时blur事件和click事件就都触发了，由于js是单线程的所以就出现了问题，现在需要让blur先执行验证，然后在触发click事件。</h3><h3 id="u89E3_u51B3_u65B9_u6CD5_uFF1A_u7ED9_u6309_u94AE_u7684click_u4E8B_u4EF6_u8BBE_u7F6E_u5EF6_u8FDF_u6267_u884CsetTimeOut_28fn_2C100_29_uFF0C_u5EF6_u8FDF_u65F6_u95F4_u7684_u8BBE_u7F6E_u8981_u5927_u4E8Eblur_u4E8B_u4EF6_u7684_u6267_u884C_u65F6_u95F4_uFF0C_u8FD9_u6837_u5C31_u4F1A_u5728blur_u4E8B_u4EF6_u6267_u884C_u5B8C_u540E_u5728_u6267_u884Cclick_u4E8B_u4EF6_u3002"><a href="#u89E3_u51B3_u65B9_u6CD5_uFF1A_u7ED9_u6309_u94AE_u7684click_u4E8B_u4EF6_u8BBE_u7F6E_u5EF6_u8FDF_u6267_u884CsetTimeOut_28fn_2C100_29_uFF0C_u5EF6_u8FDF_u65F6_u95F4_u7684_u8BBE_u7F6E_u8981_u5927_u4E8Eblur_u4E8B_u4EF6_u7684_u6267_u884C_u65F6_u95F4_uFF0C_u8FD9_u6837_u5C31_u4F1A_u5728blur_u4E8B_u4EF6_u6267_u884C_u5B8C_u540E_u5728_u6267_u884Cclick_u4E8B_u4EF6_u3002" class="headerlink" title="解决方法：给按钮的click事件设置延迟执行setTimeOut(fn,100)，延迟时间的设置要大于blur事件的执行时间，这样就会在blur事件执行完后在执行click事件。"></a>解决方法：给按钮的click事件设置延迟执行setTimeOut(fn,100)，延迟时间的设置要大于blur事件的执行时间，这样就会在blur事件执行完后在执行click事件。</h3><h4 id="u4E0A_u4EE3_u7801-2"><a href="#u4E0A_u4EE3_u7801-2" class="headerlink" title="上代码"></a>上代码</h4><p><code>&lt;body&gt;
+    &lt;div style=&quot;width:100%;overflow:hidden;&quot;&gt;
+       &lt;input class=&quot;test&quot; type=&quot;text&quot; &gt;&lt;/input&gt;
+       &lt;input class=&quot;btn&quot; type=&quot;button&quot;&gt;&lt;/input&gt;
+    &lt;/div&gt;
+    &lt;/body&gt;
+    &lt;script&gt;
+     $(function(){
+    $(&quot;.test&quot;).blur(function(){
+        console.log(321);
+      });
+    $(&quot;.btn&quot;).click(function(){
+       setTimeout(&quot;alert(123)&quot;,1000);
+    });
+     })
+    &lt;/script&gt;</code> </p>
+<h2 id="css_u4F18_u5148_u7EA7_u7684_u7406_u89E3"><a href="#css_u4F18_u5148_u7EA7_u7684_u7406_u89E3" class="headerlink" title="css优先级的理解"></a>css优先级的理解</h2><h3 id="u5F62_u5982"><a href="#u5F62_u5982" class="headerlink" title="形如"></a>形如  <div class="test_01 test_02"></div></h3><h1 id="test_-test_01_u4F18_u5148_u7EA7_u6BD4-test_02_u9AD8"><a href="#test_-test_01_u4F18_u5148_u7EA7_u6BD4-test_02_u9AD8" class="headerlink" title=".test .test_01优先级比.test_02高"></a>.test .test_01优先级比.test_02高</h1><h4 id="u4E0A_u4EE3_u7801-3"><a href="#u4E0A_u4EE3_u7801-3" class="headerlink" title="上代码"></a>上代码</h4><p><code>&lt;style&gt;
+            .test{
+              width: 134px;
+              height: 42px;
+              border: 1px solid red;
+            }
+            .test .test_01{
+              background-color: yellow;
+              width: 100%;
+              height: 100%;
+            }
+            .test_02{
+              background-color: green;
+              width: 100%;
+              height: 100%;
+            }
+          &lt;/style&gt;
+        &lt;body&gt;
+        &lt;div class=&quot;test&quot;&gt;
+          &lt;div class=&quot;test_01 test_02&quot;&gt;&lt;/div&gt;
+        &lt;/div&gt;
+        &lt;/body&gt;</code> </p>
+<h2 id="append_28_29_u65B9_u6CD5_append_28_29__u65B9_u6CD5_u5728_u88AB_u9009_u5143_u7D20_u7684_u7ED3_u5C3E_uFF08_u4ECD_u7136_u5728_u5185_u90E8_uFF09_u63D2_u5165_u6307_u5B9A_u5185_u5BB9_u3002"><a href="#append_28_29_u65B9_u6CD5_append_28_29__u65B9_u6CD5_u5728_u88AB_u9009_u5143_u7D20_u7684_u7ED3_u5C3E_uFF08_u4ECD_u7136_u5728_u5185_u90E8_uFF09_u63D2_u5165_u6307_u5B9A_u5185_u5BB9_u3002" class="headerlink" title="append()方法 append() 方法在被选元素的结尾（仍然在内部）插入指定内容。"></a>append()方法 append() 方法在被选元素的结尾（仍然在内部）插入指定内容。</h2><h2 id="u4E00_u76F4_u4EE5_u4E3Aappend_28_29_u65B9_u6CD5_u4F1A_u4E3ADOM_u53E6_u5916_u589E_u52A0_u4E00_u4E2A_u8282_u70B9_uFF0C_u8FD9_u5468_u7814_u7A76_u8F6E_u64AD_u56FE_u7684_u5B9E_u73B0_u539F_u7406_uFF0C_u53D1_u73B0_uFF0C_u4E0D_u4E00_u5B9A_u6BCF_u4E00_u4E2Aappend_u90FD_u662F_u589E_u52A0_u8282_u70B9"><a href="#u4E00_u76F4_u4EE5_u4E3Aappend_28_29_u65B9_u6CD5_u4F1A_u4E3ADOM_u53E6_u5916_u589E_u52A0_u4E00_u4E2A_u8282_u70B9_uFF0C_u8FD9_u5468_u7814_u7A76_u8F6E_u64AD_u56FE_u7684_u5B9E_u73B0_u539F_u7406_uFF0C_u53D1_u73B0_uFF0C_u4E0D_u4E00_u5B9A_u6BCF_u4E00_u4E2Aappend_u90FD_u662F_u589E_u52A0_u8282_u70B9" class="headerlink" title="一直以为append()方法会为DOM另外增加一个节点，这周研究轮播图的实现原理，发现，不一定每一个append都是增加节点"></a>一直以为append()方法会为DOM另外增加一个节点，这周研究轮播图的实现原理，发现，不一定每一个append都是增加节点</h2><h4 id="u4E0A_u4EE3_u7801__u6BCF_u4E00_u6B21_u70B9_u51FBli_2C_u90FD_u4EC5_u4EC5_u662F_u6539_u53D8_u4E86_u4ED6_u7684_u4F4D_u7F6E"><a href="#u4E0A_u4EE3_u7801__u6BCF_u4E00_u6B21_u70B9_u51FBli_2C_u90FD_u4EC5_u4EC5_u662F_u6539_u53D8_u4E86_u4ED6_u7684_u4F4D_u7F6E" class="headerlink" title="上代码 每一次点击li,都仅仅是改变了他的位置"></a>上代码 每一次点击li,都仅仅是改变了他的位置</h4><p><code>&lt;ul class=&quot;test&quot;&gt;
+        &lt;li&gt;1&lt;/li&gt;
+        &lt;li&gt;2&lt;/li&gt;
+        &lt;li&gt;3&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/body&gt;
+    &lt;script&gt;
+       $(function(){
+          $(&quot;li&quot;).click(function(){
+            $(this).appendTo(&quot;ul&quot;);
+          })
+       })
+    &lt;/script&gt;</code> </p>
+<h2 id="Unbind_28_29//_u7684_u8FD0_u7528__u5728_u5927_u578B_u9879_u76EE_u4E2D_uFF0C_u52A0_u8F7D_u4E86N_u4E2AJS_u6587_u4EF6_uFF0C_u89E3_u9664_u4E8B_u4EF6_u7684_u7ED1_u5B9A_u91CD_u65B0_u5199_u4E0A_u81EA_u5DF1_u7684_u4E8B_u4EF6_u7ECF_u5E38_u7528_u5230"><a href="#Unbind_28_29//_u7684_u8FD0_u7528__u5728_u5927_u578B_u9879_u76EE_u4E2D_uFF0C_u52A0_u8F7D_u4E86N_u4E2AJS_u6587_u4EF6_uFF0C_u89E3_u9664_u4E8B_u4EF6_u7684_u7ED1_u5B9A_u91CD_u65B0_u5199_u4E0A_u81EA_u5DF1_u7684_u4E8B_u4EF6_u7ECF_u5E38_u7528_u5230" class="headerlink" title="Unbind()//的运用 在大型项目中，加载了N个JS文件，解除事件的绑定重新写上自己的事件经常用到"></a>Unbind()//的运用 在大型项目中，加载了N个JS文件，解除事件的绑定重新写上自己的事件经常用到</h2><h4 id="u4E0A_u4EE3_u7801-4"><a href="#u4E0A_u4EE3_u7801-4" class="headerlink" title="上代码"></a>上代码</h4><p><code>!function(){
+              $(&quot;.but&quot;).click(function(){
+                    alert(&quot;1&quot;);
+                  });
+             $(&quot;.but&quot;).unbind(&quot;click&quot;).click(function(){
+                    alert(&quot;2&quot;);//弹出2
+                  });
+          }();</code> </p>
+
+    
+  </div>
+  <footer class="end-sep">
+    
+      
+      
+    
+    <div class="clearfix"></div>
+  </footer>
+</article>
+
+
+  
+    <article class="post">
+  <header>
+    
+      <div class="icon"></div>
+      <a href="/2016/03/20/2016-3-13-3-20一周技术点滴/">
+  <time datetime="2016-03-20T07:46:15.000Z">
+    2016-03-20
+  </time>
+</a>
+    
+    
+  
+    <h1 class="title"><a href="/2016/03/20/2016-3-13-3-20一周技术点滴/">2016.3.13-3.20周技术点滴</a></h1>
+  
+
+  </header>
+  
+  <div class="entry">
+    
+      <h2 id="Label_FOR_u5C5E_u6027"><a href="#Label_FOR_u5C5E_u6027" class="headerlink" title="Label FOR属性"></a>Label FOR属性</h2><h3 id="u8868_u793ALabel_u6807_u7B7E_u8981_u7ED1_u5B9A_u7684HTML_u5143_u7D20_uFF0C_u4F60_u70B9_u51FB_u8FD9_u4E2A_u6807_u7B7E_u7684_u65F6_u5019_uFF0C_u6240_u7ED1_u5B9A_u7684_u5143_u7D20_u5C06_u83B7_u53D6_u7126_u70B9_u3002"><a href="#u8868_u793ALabel_u6807_u7B7E_u8981_u7ED1_u5B9A_u7684HTML_u5143_u7D20_uFF0C_u4F60_u70B9_u51FB_u8FD9_u4E2A_u6807_u7B7E_u7684_u65F6_u5019_uFF0C_u6240_u7ED1_u5B9A_u7684_u5143_u7D20_u5C06_u83B7_u53D6_u7126_u70B9_u3002" class="headerlink" title="表示Label标签要绑定的HTML元素，你点击这个标签的时候，所绑定的元素将获取焦点。"></a>表示Label标签要绑定的HTML元素，你点击这个标签的时候，所绑定的元素将获取焦点。</h3><h3 id="u7528_u6CD5"><a href="#u7528_u6CD5" class="headerlink" title="用法"></a>用法</h3><p><code>&lt;Label FOR=&quot;InputBox&quot;&gt;姓名&lt;/Label&gt;&lt;input ID=&quot;InputBox&quot; type=&quot;text&quot;&gt;</code></p>
+<h2 id="jQuery-extend_28_29_u65B9_u6CD5"><a href="#jQuery-extend_28_29_u65B9_u6CD5" class="headerlink" title="jQuery.extend()方法"></a>jQuery.extend()方法</h2><h3 id="u529F_u80FD_uFF1A_u4E3B_u8981_u662F_u7528_u6765_u62D3_u5C55_u4E2A_u5168_u5C40_u51FD_u6570_u5566_uFF0C_u4F8B_u5982_24-ajax_28_29_//_u5BF9Jquery_u672C_u8EAB_u7684_u5C5E_u6027_u4E0E_u65B9_u6CD5_u8FDB_u884C_u6269_u5C55_uFF1Bthis_u6307_u5411jquery_u5BF9_u8C61"><a href="#u529F_u80FD_uFF1A_u4E3B_u8981_u662F_u7528_u6765_u62D3_u5C55_u4E2A_u5168_u5C40_u51FD_u6570_u5566_uFF0C_u4F8B_u5982_24-ajax_28_29_//_u5BF9Jquery_u672C_u8EAB_u7684_u5C5E_u6027_u4E0E_u65B9_u6CD5_u8FDB_u884C_u6269_u5C55_uFF1Bthis_u6307_u5411jquery_u5BF9_u8C61" class="headerlink" title="功能：主要是用来拓展个全局函数啦，例如$.ajax()  //对Jquery本身的属性与方法进行扩展；this指向jquery对象"></a>功能：主要是用来拓展个全局函数啦，例如$.ajax()  //对Jquery本身的属性与方法进行扩展；this指向jquery对象</h3><h2 id="jQuery-fn-extend_28_7B_7D_29_u65B9_u6CD5_3B"><a href="#jQuery-fn-extend_28_7B_7D_29_u65B9_u6CD5_3B" class="headerlink" title="jQuery.fn.extend({})方法;"></a>jQuery.fn.extend({})方法;</h2><h3 id="u529F_u80FD_uFF1A_u65B9_u6CD5_u7528_u6765_u8BBE_u7F6E_u5BF9_u8C61_u65B9_u6CD5_u7684_u6269_u5C55_//_u5BF9Jquery_u7684_u51FD_u6570_u7684_u65B9_u6CD5_u5C5E_u6027_u8FDB_u884C_u6269_u5C55_uFF1Bthis_u6307_u5411jquery_u7684fn_u5BF9_u8C61_uFF1B"><a href="#u529F_u80FD_uFF1A_u65B9_u6CD5_u7528_u6765_u8BBE_u7F6E_u5BF9_u8C61_u65B9_u6CD5_u7684_u6269_u5C55_//_u5BF9Jquery_u7684_u51FD_u6570_u7684_u65B9_u6CD5_u5C5E_u6027_u8FDB_u884C_u6269_u5C55_uFF1Bthis_u6307_u5411jquery_u7684fn_u5BF9_u8C61_uFF1B" class="headerlink" title="功能：方法用来设置对象方法的扩展  //对Jquery的函数的方法属性进行扩展；this指向jquery的fn对象；"></a>功能：方法用来设置对象方法的扩展  //对Jquery的函数的方法属性进行扩展；this指向jquery的fn对象；</h3><h4 id="u4E0A_u4EE3_u7801"><a href="#u4E0A_u4EE3_u7801" class="headerlink" title="上代码"></a>上代码</h4><h5 id="//_u7ED9jquery_u6DFB_u52A0_u5168_u5C40_u51FD_u6570_//_u5982_24-ajax"><a href="#//_u7ED9jquery_u6DFB_u52A0_u5168_u5C40_u51FD_u6570_//_u5982_24-ajax" class="headerlink" title="//给jquery添加全局函数  //如$.ajax"></a>//给jquery添加全局函数  //如$.ajax</h5><p><code>$.extend({
+    obj_1:function(a){
+      alert(a);
+    }
+  });
+  $.obj_1(&quot;test&quot;);  //弹出test</code></p>
+<h5 id="//_u7ED9jquery_u7684_u5BF9_u8C61_u6DFB_u52A0_u65B9_u6CD5_//_u5982_24_28_u201C-abc_u201D_29-a_28_29_3B_u4E3A_u7C7B_u540D_u4E3Aabc_u7684div_u8C03_u7528a_u65B9_u6CD5"><a href="#//_u7ED9jquery_u7684_u5BF9_u8C61_u6DFB_u52A0_u65B9_u6CD5_//_u5982_24_28_u201C-abc_u201D_29-a_28_29_3B_u4E3A_u7C7B_u540D_u4E3Aabc_u7684div_u8C03_u7528a_u65B9_u6CD5" class="headerlink" title="//给jquery的对象添加方法  //如$(“.abc”).a();为类名为abc的div调用a方法"></a>//给jquery的对象添加方法  //如$(“.abc”).a();为类名为abc的div调用a方法</h5><p><code>(function(jQuery){
+        $.fn.extend({
+            a:function(){
+             $(this).css(&quot;background-color&quot;,&quot;red&quot;)
+            }
+        });
+    })(jQuery);
+   //$(&quot;.abc&quot;).a();  //颜色变红</code></p>
+<h2 id="u7406_u89E3js_u7684_26amp_3B_26amp_3B_u4E0E_7C_7C__u90FD_u4F1A_u5C06_u5176_u4E24_u8FB9_u7684_u503C_u4E13_u4E3A_u5E03_u5C14_u503C_u518D_u6267_u884C"><a href="#u7406_u89E3js_u7684_26amp_3B_26amp_3B_u4E0E_7C_7C__u90FD_u4F1A_u5C06_u5176_u4E24_u8FB9_u7684_u503C_u4E13_u4E3A_u5E03_u5C14_u503C_u518D_u6267_u884C" class="headerlink" title="理解js的&amp;&amp;与|| 都会将其两边的值专为布尔值再执行"></a>理解js的&amp;&amp;与|| 都会将其两边的值专为布尔值再执行</h2><h3 id="a_28_29_26amp_3B_26amp_3Bb_28_29_3B__u82E5a_28_29_u4E3A_u771F_uFF0C_u5219_u6267_u884Cb_28_29_2C_u5E76_u8FD4_u56DEb_28_29_u7684_u503C_uFF1B"><a href="#a_28_29_26amp_3B_26amp_3Bb_28_29_3B__u82E5a_28_29_u4E3A_u771F_uFF0C_u5219_u6267_u884Cb_28_29_2C_u5E76_u8FD4_u56DEb_28_29_u7684_u503C_uFF1B" class="headerlink" title="a()&amp;&amp;b(); 若a()为真，则执行b(),并返回b()的值；"></a>a()&amp;&amp;b(); 若a()为真，则执行b(),并返回b()的值；</h3><pre><code>若a()为假,则直接返回a()的值，不执行b();
+</code></pre><h3 id="a_28_29_7C_7Cb_28_29_3B__u82E5a_28_29_u4E3A_u771F_uFF0C_u5219_u6267_u884Ca_28_29_2C_u5E76_u8FD4_u56DEa_28_29_u7684_u503C_uFF0C_u4E0D_u6267_u884Cb_28_29_uFF1B"><a href="#a_28_29_7C_7Cb_28_29_3B__u82E5a_28_29_u4E3A_u771F_uFF0C_u5219_u6267_u884Ca_28_29_2C_u5E76_u8FD4_u56DEa_28_29_u7684_u503C_uFF0C_u4E0D_u6267_u884Cb_28_29_uFF1B" class="headerlink" title="a()||b();  若a()为真，则执行a(),并返回a()的值，不执行b()；"></a>a()||b();  若a()为真，则执行a(),并返回a()的值，不执行b()；</h3><pre><code>若a()为假, 则执行b(),并返回b()的值；
+</code></pre><h3 id="26amp_3B_26amp_3B__u4F18_u5148_u7EA7_u9AD8_u4E8E__7C_7C"><a href="#26amp_3B_26amp_3B__u4F18_u5148_u7EA7_u9AD8_u4E8E__7C_7C" class="headerlink" title="&amp;&amp; 优先级高于 ||"></a>&amp;&amp; 优先级高于 ||</h3><h3 id="u4E0A_u4EE3_u7801-1"><a href="#u4E0A_u4EE3_u7801-1" class="headerlink" title="上代码"></a>上代码</h3><p> <code>alert((1 &amp;&amp; 3 || 0) &amp;&amp; 4); //结果4 
+1&amp;&amp;3 返回3 =&gt; 3 || 0 返回 3 =&gt; 3&amp;&amp;4 返回 4</code></p>
+<h2 id="Div_p__u4E0EDIV__26gt_3BP_u7684_u533A_u522B"><a href="#Div_p__u4E0EDIV__26gt_3BP_u7684_u533A_u522B" class="headerlink" title="Div p 与DIV &gt;P的区别"></a>Div p 与DIV &gt;P的区别</h2><h3 id="test_p__u9009_u53D6class_u540D_u4E3Atest_u7684_u4E0B_u9762_u7684_u6240_u6709p"><a href="#test_p__u9009_u53D6class_u540D_u4E3Atest_u7684_u4E0B_u9762_u7684_u6240_u6709p" class="headerlink" title=".test p 选取class名为test的下面的所有p"></a>.test p 选取class名为test的下面的所有p</h3><pre><code>包括&lt;div class=”test”&gt;&lt;div&gt;&lt;p&gt;&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;
+</code></pre><h3 id="test_26gt_3Bp__u9009_u53D6class_u540D_u4E3Atest_u7684P"><a href="#test_26gt_3Bp__u9009_u53D6class_u540D_u4E3Atest_u7684P" class="headerlink" title=".test&gt;p 选取class名为test的P"></a>.test&gt;p 选取class名为test的P</h3><pre><code>如&lt;div class=”test”&gt;&lt;p&gt;&lt;/p&gt;&lt;/div&gt;
+**不包括**&lt;div class=”test”&gt;&lt;div&gt;&lt;p&gt;&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;
+</code></pre>
+    
+  </div>
+  <footer class="end-sep">
+    
+      
+      
+    
+    <div class="clearfix"></div>
+  </footer>
+</article>
+
+
+  
+
+  <nav id="pagination">
+  
+  
+    <a href="/page/2/" class="next">下一页</a>
+  
+  <div class="clearfix"></div>
+</nav>
+
+</div>
+  </div>
+  <footer id="footer"><div class="copyright">
+  
+  &copy; 2016 <a href="/">assignway</a>
+  
+</div>
+<div class="theme-copyright">
+  Theme by <a href="https://github.com/orderedlist" target="_blank">orderedlist</a>
+   | 
+  Redesign by <a href="http://heroicyang.com/" target="_blank">Heroic Yang</a>
+</div>
+<div class="clearfix"></div></footer>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script>
+<script src="/js/scale.fix.js"></script>
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+
+
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+  (function($){
+    $('.fancybox').fancybox();
+  })(jQuery);
+</script>
+
+</body>
+</html>
